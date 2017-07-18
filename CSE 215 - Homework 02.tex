@@ -1,0 +1,343 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\voffset}{0in}
+\setlength{\headsep}{20pt}
+\setcounter{section}{+2}
+\usepackage{wrapfig,lipsum,booktabs}
+
+\newcommand\tab[1][.8 cm]{\hspace*{#1}}
+\newcommand*{\mybox}[1]{\framebox{#1}}
+
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+
+
+
+\begin{document}
+\title{\vspace{-.5in} Ishan Sethi $|$ ID: 110941217 $|$ CSE 215 $|$ Homework 2 in \LaTeX}
+\author{Professor McDonnell $|$ Assigned: February 7, 2017 $|$ Due: February 16, 2017}
+\date{}
+\maketitle
+\hrulefill
+\tableofcontents
+
+\section{Predicates, Statements, Arguments and Quantified Statements}
+\subsection{ - 12, 16b, 16d, 16f, 25d, 26a, 30a, 30c and 33d}
+\begin{flushleft}
+12) $\forall$ real $x$ and $y$, $\sqrt{x+y} = \sqrt{x} + \sqrt{y}$
+
+Let $x = 10$ and let $y = 10$, this would make $\sqrt{x+y}$ really just be $\sqrt{20}$ which is not equal to $2\sqrt{10}$, coming from $\sqrt{x} + \sqrt{y} = \sqrt{10} + \sqrt{10}$. This would make the latter part of the implied conditional false which would make the ``$\forall$" part false which in the end makes this statement \textbf{false}.
+
+\hrulefill
+
+16 - 
+
+b) $\forall$ real $x$, $x > 0$, $x < 0$ or $x = 0$.
+
+d) $\forall$ logicians $x$, $\sim ($ logicians, $x$, are lazy $)$
+
+f) $\forall$ real $x$, $\sim (x^2= -1)$
+
+\hrulefill
+
+25d) i) $\forall$ irrational $x$, $-x$ is also irrational.
+
+\tab ii) $\forall$ irrational $x$, if $x$ is irrational then $-x$ is also irrational.
+
+\hrulefill
+
+26a) $\forall x$, if $x$ is an integer then it is rational, but $\exists $rational $x$ such that if $x$ is rational then it is not an integer. 
+
+\hrulefill
+
+30a) $\exists x \in \mathbb{Z}$ such that Prime($x$) $\land$ $\sim$Odd($x$)
+
+Let $x = $ 2, 2 is prime and 2 is not odd, this makes the conditional/conjunction true and this makes the whole predicate true because the premises only requires one to satisfy to yield \textbf{true}
+
+\hrulefill
+
+30c) $\exists x \in \mathbb{Z}$ such that odd($x$) $\land$ square($x$)
+
+Let $x=$ 81, 81 is odd and 81 is a perfect square ($9^2 = 81$). This makes the conditional/conjunction true and this makes the whole predicate true because the premises only requires one to satisfy to yield \textbf{true}
+
+\hrulefill
+
+33d) $\mathbb{R} = \{ a, b, c, d\}$ and $(a < b) \land [ (c < d) \Rightarrow (ac < bd) ]$
+
+Let $a = 2$, $b = 3$, $c = -3$ and $d = -2$, this would yield in $(2 < 3) \land [(-3 < -2) \Rightarrow (-6 < -6)]$
+
+$-6 \nless -6$ so this would yield in the conditional being $T \to F$ which outputs a false, which makes the conjunction $T \land F$ which then evaluates to a \textbf{false} predicate.
+
+
+
+
+
+
+\hrulefill
+\end{flushleft}
+
+
+\subsection{ - 2, 14, 21, 31, 42, 44}
+\begin{flushleft}
+ 2) Original Statement:  ``All dogs are loyal"
+ 
+ a) ``All dogs are not loyal" (Negation)
+ 
+ b) ``No dogs are loyal" (Negation)
+ 
+ c) ``Some dogs are disloyal" (Negation)
+ 
+ d) ``Some dogs are loyal" (Not a Negation)
+ 
+ e) ``There is a disloyal animal that is not a dog" (Not a Negation)
+ 
+ f) ``There is a dog that is loyal" (Negation)
+ 
+ g) ``No animals that are not dogs are loyal" (Negation)
+ 
+ h) ``Some animals that are not dogs are loyal" (Negation)
+ 
+ 
+\hrulefill
+
+14) \textbf{Incorrect}
+
+\textbf{Corrected}: $\exists$ real $x_1$ and $x_2$ such that $x_1^2 = x_2^2$ and $x_1 \neq x_2$ 
+
+\hrulefill
+
+21) \textbf{Original}: $\forall$ integers $n$, if $(n$ is divisible by 6$)$, then $(n$ is divisible by 2 and $n$ is divisible by 3$)$.
+
+\textbf{Negation}: $\exists$ integer $n$ such that $(n$ is divisible by 6$)$ and $\sim (n$ is divisible by 2 and $n$ is divisible by 3$)$
+
+\hrulefill
+
+31) \textbf{Original}: $\forall$ integers $n$, if $(n$ is divisible by 6$)$, then $(n$ is divisible by 2 and $n$ is divisible by 3$)$. \textbf{True}
+
+\textbf{Converse}: $\forall$ integers $n$, if $(n$ is divisible by 2 and $n$ is divisible by 3$)$, then $(n$ is divisible by 6$)$. \textbf{True}
+
+\textbf{Inverse}: $\forall$ integers $n$, if $(n$ is not divisible by 6$)$, then $(n$ is not divisible by 2 or $n$ is not divisible by 3$)$. \textbf{True}
+
+\textbf{Contra}: $\forall$ integers $n$, if $(n$ is not divisible by 2 or $n$ is not divisible by 3$)$, then $(n$ is not divisible by 6$)$. \textbf{True}
+
+\hrulefill
+
+42) $\{ \exists$ comprehensive exams $c$ such that if $c$ is not passed, then masters is not obtained.$\}$
+
+\hrulefill
+
+44) $\{ \exists$ person $p$ such that $\sim ($if $p$ has happiness, then $p$ has a high salary. $)\}$
+
+\hrulefill
+
+
+
+\end{flushleft}
+\subsection{- 10b, 10d, 10f, 11b, 11e, 11f, 19, 24b, 36, 41d and 41g}
+\begin{flushleft}
+
+10
+
+b) $\forall$ students $s$, $\exists$  a salad $T$ such that $s$ chose $T$.
+
+This statement is \textbf{False} because Yuen didn't choose a salad.
+
+
+d) $\exists$ a beverage $b$, such that $\forall$  students  $D$, $D$ chose $b$.
+
+This statement is \textbf{False} because the three people didn't have one drink in common.
+
+f) $\exists$ a station $Z$, $\forall$  students $s$, $\exists$ an item $I$ such that $s$ chose $I$ from $Z$.
+
+This statement is \textbf{True} because all three chose one dish from one station, pie.
+
+\hrulefill
+
+11
+
+b) If you are a student in $S$ and then you have seen Star wars.
+
+e) If student $s$ is in $S$ and student $t$ is in $S$ and $s$ is not the same as $t$, $t$ and $s$ will watch the same movie $m$ in $M$.
+
+f) If student $s$ is in $S$ and student $t$ is in $S$ and $s$ is not the same as $t$, they will watch the same but an undefined movie $m$ in set $M$.
+
+\hrulefill
+
+19) \textbf{Negation:} Any $x$ in ${\rm I\!R}^{+}$ will have one $y$ in ${\rm I\!R}^{+}$ such that $x>y$.
+
+\hrulefill
+
+24b) 
+$$\sim (\exists x \in D (\exists y \in E(P(x,y)))) $$
+$$\equiv \forall x \in D \sim (\exists y \in E(P(x,y)))$$
+$$\equiv \forall x \in D (\forall y \in E(\sim P(x,y)))$$
+\hrulefill
+\newpage
+
+
+36) ``Somebody trusts everybody", Let $t(x,y) = $ ``x trusts y''
+
+\textbf{Original: }$\{\exists s \in S, \forall e \in E | t(s,e) \}$
+
+\textbf{Negation: }$\{\forall s \in S, \exists e \in E | \sim t(s,e) \}$
+
+\hrulefill
+
+41d) \textbf{Original: }$\{\forall x \in {\rm I\!R}^{+}, \exists y \in {\rm I\!R}^{+} | xy=1 \}$ 
+
+Yes this is \textbf{True} because if you have a positive real number, the reciprocal is of that is indeed a real number and that times the original = 1 \textit{Q.E.D} (the QED is a joke, if it doesn't apply, dont take points off pls)
+
+g) \textbf{Original: }$\{\forall z\in \mathbb{Z}, \forall y \in \mathbb{Z} | z = x-y \}$
+
+This is \textbf{True} because any real number subtracted from any real number will yield in 1 specific real number. 
+
+\hrulefill
+
+Extra Problem)
+
+``For every object $x$, there is an object $y$ such that $x\neq y$, then $x$ and $y$  have different colors"
+
+Let $dC(x,y) = ``x $ and $y$ have different colors"
+
+a) True
+ 
+b) \textbf{Original: }$\{\forall \text{ objects } x, \exists \text{ object } y, | (x\neq y) \Rightarrow (dC(x,y))\}$
+
+c) \textbf{Negation: }$\{ \exists \text{ object } x, \forall \text{ objects } y, | (x\neq y)\land (\sim dC(x,y)) \} $
+
+
+
+
+
+
+
+\hrulefill
+\end{flushleft}
+\subsection{- 12, 17, 18, 22, 27, 32}
+\begin{flushleft}
+
+
+12) 
+
+All honest people pay taxes
+
+Darth is not honest
+
+$\therefore$ Darth does not pay taxes
+
+\mybox{This argument is \textbf{invalid} because this is an \textbf{inverse} \textbf{error}.}
+
+\hrulefill
+
+17) 
+
+If an infinite series converges, then its terms go to 0.
+
+The terms of the infinite series $\displaystyle{\sum_{n=1}^{\infty} \frac{1}{n}}$ go to 0.
+
+$\therefore$ The infinite series $\displaystyle{\sum_{n=1}^{\infty} \frac{1}{n}}$ converges.
+
+\mybox{This argument is \textbf{invalid} because this is a \textbf{converse} \textbf{error}.}
+
+\hrulefill
+
+18) 
+
+If an infinite series converges, then its terms go to 0.
+
+The terms of the infinite series $\displaystyle{\sum_{n=1}^{\infty} \frac{n}{n-1}}$ do not go to 0.
+
+$\therefore$ The infinite series $\displaystyle{\sum_{n=1}^{\infty} \frac{n}{n-1}}$ doesn't converge.
+
+\mybox{This argument is \textbf{valid} because \textbf{universal modus tollens.}}
+
+\hrulefill
+
+22) Under the Proof (Number 32)
+
+\hrulefill
+
+27) Under the Proof (Number 32)
+
+\hrulefill
+\newpage
+Number 32) - Main Proof
+
+${\rm I}$) Let $G(x)$ = ``Grumble from $x$" and $U(x)$ = ``Understand $x$" 
+
+Statement:  $\{ \exists x \in L_e | \sim G(x) \Rightarrow U(x)\}$ 
+
+${\rm I\!I}$) Let $Ar(x)$ = ``$x$ arranged like I am used to" 
+
+Statement:  $\{ \forall x \in A_r | \sim Ar(x)\}$
+
+${\rm I\!I\!I}$) Let $E(x)$ = ``Easy Examples" and $H(x)$ = ``Headache from $x$" 
+
+Statement:  $\{ \forall x \in L_e | E(x) \Rightarrow \sim H(x)\}$ 
+
+${\rm I\!V}$) Phrases already defined
+
+Statement:  $\{ \forall x \in A_r, \exists e \in L_e | \sim Ar(x) \Rightarrow \sim U(e)   \}$
+
+${\rm V}$) Phrases already defined
+
+Statement:  $\{ \exists x \in L_e | \sim H(x) \Rightarrow  \sim G(x) \}$ 
+
+$\therefore$ $\{ \forall  e \in L_e | \sim E(x)      \}$
+
+
+\begin{center}
+	\begin{tabular}{|l|c|} \hline
+	
+	A) $\{ \forall x \in A_r, \exists e \in L_e | U(e)   \Rightarrow  Ar(x) \}$	& \textbf{Contrapositive of Statement 4} \\ \hline
+	%-----------------------------------------------
+	A) $\{ \forall x \in A_r, \exists e \in L_e | U(e)   \Rightarrow  Ar(x) \}$	& From Statement A \\ 
+	2) $\{ \forall x \in A_r | \sim Ar(x)\}$			& Statement 2 \\ 
+   $\therefore \ \{\exists e \in L_e | \sim U(e)\}$& \textbf{B) Universal Modus Tollens} \\ \hline
+    %-------------------------------------------------
+	5) $\{ \exists x \in L_e | \sim H(x) \Rightarrow  \sim G(x) \}$ 		& Statement 5 \\
+	3) $\{ \forall x \in L_e | E(x) \Rightarrow \sim H(x)\}$ 			& Statement 3 \\
+	 $\therefore \{ \forall x \in L_e | E(x) \Rightarrow \sim G(x)\} $    & \textbf{C) Universal Transitivity} \\ \hline
+	%--------------------------------------------------
+	1) $\{ \exists x \in L_e | \sim G(x) \Rightarrow U(x)\}$		& Statement 1 \\
+	B) $\{\exists e \in A_r | \sim U(e)\}$			& From Statement B \\
+	$\therefore \{\exists e \in A_r | \sim (\sim G(e))\}$		& \textbf{D) Universal Modus Tollens} \\ \hline
+	%--------------------------------------------------
+	B) $\{\exists e \in A_r | \sim (\sim G(e))\}$				& From Statement D \\
+	$\therefore \{\exists e \in A_r | G(e)\}$			& \textbf{E) Universal Double Negation Law} \\ \hline
+	%--------------------------------------------------
+	C) $\{ \forall x \in L_e | E(x) \Rightarrow \sim G(x)\}$  & From Statement C \\
+	E) $\{\exists e \in A_r | G(e)\}$	& From Statement E \\
+	$\therefore \{ \forall  e \in L_e | \sim E(x)\}$		& \textbf{ Universal Modus Tollens} \\ \hline
+	%--------------------------------------------------
+	
+	
+	\end{tabular}	
+	\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\hrulefill
+\end{flushleft}
+\end{document}

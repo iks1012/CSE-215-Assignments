@@ -1,0 +1,255 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\voffset}{0in}
+\setlength{\headsep}{20pt}
+\setcounter{section}{+3}
+\usepackage{wrapfig,lipsum,booktabs}
+
+\newcommand\tab[1][.8 cm]{\hspace*{#1}}
+\newcommand*{\mybox}[1]{\framebox{#1}}
+
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+
+%${\rm I\!R}^3$
+
+\begin{document}
+\title{\vspace{-.5in} Ishan Sethi $|$ ID: 110941217 $|$ CSE 215 $|$ Homework 3 in \LaTeX}
+\author{Professor McDonnell $|$ Assigned: February 16, 2017 $|$ Due: February 28, 2017}
+\date{}
+\maketitle
+\hrulefill
+\tableofcontents
+
+\section{Elementary number theory and methods of proof}
+\subsection{10, 21, 34, 41, 53}
+\begin{flushleft}
+
+10) There is an integer n such that $2n^2-5n+2$ is prime.
+
+A integer $n$ is prime if and only if its greater than 1 and if $n=rs$ then either ($r=1$ and $s=n$) or ($s=1$ and $r=n$). This is the case due to the definition of a prime number.
+
+To disprove this, the second half should be false, so if none of the components are equal to one or if the are both greater than one.
+
+$$2n^2-5n+2$$
+$$(2n-1)(n-2) \text{ Let $(2n - 1)=r$ and $(n-2)=s$}$$
+$$2n-1>1 \text{ and } n-2>1$$
+$$2n-1>1 \text{ and } n-2>1$$
+$$n>1 \text{ and } n>3$$
+
+If $n$ is greater than three is it also greater than one. There are select integers greater than three that satisfy said condition. $\ \ Q.E.D$  \mybox{True}
+
+
+\hrulefill
+
+21) For all real numbers, if $x>1$ then $x^2>x$ .
+
+\underline{Proof:} Given $\forall x \in {\rm I\!R}$, $x>1$ \mybox{TRUE} because:
+
+$$x(x>1)$$
+$$\equiv x^2>x\ \ Q.E.D$$
+
+\hrulefill
+
+34) If n is an odd integer than $(-1)^n=(-1)$
+\underline{Proof:}
+$$(-1)^n = (-1)^{2n+1}\equiv ((-1)^2)^n + (-1)^{1}\equiv (1)^n + (-1)^{1}\equiv (1)^n + (-1)^{1}$$
+$$\equiv -1$$
+
+\mybox{True}
+
+\hrulefill
+\newpage
+
+41) $mn=(2p)(2q+1)=$ They assumed that $m\cdot n$ will be even it as $r=4pq+2p=2(2pq+p)=even$
+
+\mybox{The set of r was never defined/initialized}
+
+\hrulefill
+
+53) $\forall \ \text{integers} \ n,\ n^2 -n+11$ is prime 
+
+\underline{Proof:} A integer $n$ is prime if and only if its greater than 1 and if $n=rs$ then either ($r=1$ and $s=n$) or ($s=1$ and $r=n$). This is the case due to the definition of a prime number.
+
+$$r: (n+5 \geq 1) \text{ OR } s:(n-6\leq 1)$$
+$$r: (n \geq -4) \text{ OR } s:(n\geq 7)$$
+
+If n is less than 4 both conditions are violated. This makes the requirement for a prime number false. Making this argument \mybox{FALSE} as it violates the ``for all" premise. The counter example that makes is false is if n is less than $-4$.
+
+\hrulefill
+\end{flushleft}
+\subsection{18, 22, 28}
+\begin{flushleft}
+
+18)  If $r$ and $s$ are any two rational numbers, then $\displaystyle{\frac{r+s}{2}}$ is also rational.
+
+\underline{Proof:} Given that $r$ and $s$ are rational by definition of rationality it can be considered that $r  = \displaystyle{\frac{a}{b}}$ and  $s  = \displaystyle{\frac{c}{d}}$ such that $b$ and $d$ both do not equal 0 and a,b,c and d are in the set of real integers.
+
+Consider addition: 
+$$r+s=\displaystyle{\frac{ad+bc}{bd}}$$
+
+$ac \text{ and } bd$ are integers because an integer times an integer is an integer. $bd$ is one integer because an integer times an integer is an integer. By the definition of rationality if one were to divide the integers (such as: $r+s=\displaystyle{\frac{ad+bc}{bd}}$) the quotient of the two is rational. Thereby making r+s rational and the number 2 is just a constant integer so it can be added such that $\displaystyle{\frac{r+s}{2}}=\displaystyle{\frac{ad+bc}{2bd}}$ thus making it rational by definition of rationality.  \mybox{Q.E.D}
+
+\hrulefill
+
+22) True or False, if any integer $a$ is odd then $a^2+a$ is even 
+
+\underline{Proof:} Let $a=2r+1$ such that r can be any integer in the set of all integers. (Definition of an odd number)
+
+$a^2+a = (2r+1)^2 + (2r+1) = 4r^2+4r+1+2r+1=4r^2+6r+2=2(2r^2+3r+1)$
+
+Since $2r^2+3r$ is an integer through integer multiplication and integer addition yielding integers, we can let $(2r^2+3r+1) = m$
+
+Because of this, we can express $2(2r^2+3r+1)$ as $2m$, this is indicative of the fact that it is even (By Definition). $\therefore$ \mybox{TRUE, Q.E.D.} 
+
+\hrulefill
+
+28) Suppose $a,b,c,d$ are integers in $\mathbb{Z}$  and $a\neq c$ suppose x is in ${\rm I\!R}$ such that: $\displaystyle{\frac{ax+b}{cx+d}} = 1$ 
+
+$$ax+b = cx+d$$
+$$ax-cx = d-b$$
+$$x(a-c) = (d-b)$$
+$$\therefore x = \displaystyle{\frac{d-b}{a-c}}$$
+
+This must mean that x is rational because $d-b$ and $a-c$ are integers in $\mathbb{Z}$ and the division of those two, $x$, yields in a rational number. Both these statements can be justified through the definition of integer subtraction and rationality. Yes x must be Rational. QED.
+
+
+
+
+\hrulefill
+\end{flushleft}
+\subsection{20, 27, 31, 38c}
+\begin{flushleft}
+
+20) $\forall x$ s.t. $3|((x+0)+(x+1)+(x+2))$
+
+This means that $3|(3x+3)$ is the claim that is claimed to be true for all x.
+
+This can be simplified to $1|(x+1)$, through factorization.
+
+The above statement is \textbf{True} as this is the identity postulate and $x+1$ is an Integer through integer addition and any integer divided by 1 is itself. \mybox{TRUE, QED}
+
+\hrulefill
+
+27) $\forall a \forall b \forall c \text{ in } \mathbb{Z}$ if $a|(b+c)$ then $(a|b or a|c)$
+
+This is \textbf{false}, 
+Let a = 2,
+Let b = 5 and c = 1.
+
+$$2|(5+1)\text{ but }2\nmid 1\text{ and }2\nmid 5\text{ \mybox{QED}}$$
+
+\hrulefill
+
+31) $\forall$ integers $a$ and $b$, if $a|(10b)$ then $(a|10)$ and $(a|b)$
+
+\textbf{FALSE} because if we let a = 4 and b = 2 for example, $4|(20)$ holds true but $(4\nmid 10)$ and $(4\nmid 2)$
+
+\hrulefill
+
+38c) $a = p_1^{e_1}\cdot p_2^{e_2}\cdot \cdot \cdot p_n^{e_n}$
+
+$2^2\cdot 3^5\cdot 7^1\cdot 11^1\cdot m$
+
+$m = 3^1\cdot 7^1\cdot 11^1 =$\mybox{$231$}
+
+$\sqrt{2^2\cdot 3^6\cdot 7^2\cdot 11^2} = 2^1\cdot 3^3\cdot 7^1\cdot 11^1 = 4090$
+
+\mybox{$(4090)^2$}
+
+\hrulefill
+\end{flushleft}
+\subsection{22, 25, 34, 37}
+\begin{flushleft}
+
+22) $c$ $mod$ 15 $=$ 3; $10c$ $mod$ 15 $=$ ?;
+
+$c-15(c\ div\ 15)=3$ Definition of modulus
+
+$10c\ mod\ 15 = (10c)-15(10c\ mod\ 15) = 10(c-15(c\ mod\ 15)) =  10(3) = $\mybox{ $30$ }, Through definition of modulo and factorization.
+
+\hrulefill
+
+25) $a$ $mod$ 7 $=$ 5 and $b$ $mod$ 7 $=$ 6 then $ab$ $mod$ 7 $=$ 2
+
+$a-7(a\ div\ 7)=5$ Definition of modulus
+
+$b-7(b\ div\ 7)=6$ Definition of modulus
+
+$ab-7(ab\ div\ 7)=a(b-7(b\ div\ 7)) = a(6) = 2$ Definition of modulus
+
+$ab-7(ab\ div\ 7)=b(a-7(a\ div\ 7)) = b(5) = 2$ Definition of modulus
+
+This is only true for $a=\frac{1}{3}$ and $b=\frac{2}{5}$, any thing out side those values and it wouldnt work. This is \mybox{False}.
+
+\hrulefill
+
+34) \textbf{False}, Let $n=4$ and its greater than three so it satisfies the base case.
+
+$\exists$ positive integers $r$ and $s$ such that $n = rs$ and 1 $<$ r $<$ n and 1 $<$ s $<$ n. Definition/requirement for composite.
+
+Since $n=4$, 4 would be a composite number if we find that $r=2$ and $s=2$ and $2\cdot 2 = 4$. 
+
+$n+2=6$, 6 would be a composite number if we find that $r=3$ and $s=2$ and $3\cdot 2 = 6$. 
+
+$n+4=8$, 8 would be a composite number if we find that $r=4$ and $s=2$ and $4\cdot 2 = 8$. 
+
+In this case we found a counter example that finds 3 composite integers so this statement (The question) is \mybox{False.}
+
+\hrulefill
+
+34) The square of any integer should take the form $4k$ or $4k+1$
+
+Let n = 2m (Any even integer, by definition)
+
+$n^2 = 4m^2,$ let $m^2 = k$ so $n^2 = 4k$
+
+Let n = 2q+1 (Any odd integer, by definition)
+
+$n^2 = (2q+1)^2 = 4q^2 + 8q + 1 = 4(q^2 + 2q) + 1,$ let $q^2 + 2q = p$ so $n^2 = 4p+1$
+
+In this we see that based on parity (Only two possible cases) $n^2$ can either be $4k$ or $4p+1$, QED., \mybox{True}
+
+
+\hrulefill
+
+\newpage
+\end{flushleft}
+\subsection{13, 22, 24}
+\begin{flushleft}
+
+
+
+
+
+
+
+
+
+
+
+
+\hrulefill
+
+\newpage
+\end{flushleft}
+\subsection{11, 15, 17}
+\begin{flushleft}
+
+
+
+
+
+
+
+
+
+
+
+
+\hrulefill
+\end{flushleft}
+\end{document}

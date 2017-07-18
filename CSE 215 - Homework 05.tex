@@ -1,0 +1,291 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\voffset}{0in}
+\setlength{\headsep}{20pt}
+\setcounter{section}{+5}
+\usepackage{wrapfig,lipsum,booktabs}
+\usepackage{ulem}
+
+\newcommand\tab[1][.8 cm]{\hspace*{#1}}
+\newcommand*{\mybox}[1]{\framebox{#1}}
+
+
+%${\rm I\!R}^3$
+
+\begin{document}
+\title{\vspace{-.5in} Ishan Sethi $|$ ID: 110941217 $|$ CSE 215 $|$ Homework 5 in \LaTeX}
+\author{Professor McDonnell $|$ Assigned: March 28th, 2017 $|$ Due: April 6th, 2017}
+\date{}
+\maketitle
+\hrulefill
+\tableofcontents
+
+\section{Set Theory}
+\subsection{7, 12b, 12d, 12f, 12h, 12j, 15b, 25, 33a, 33c, 35c, 35d}
+\begin{flushleft}
+
+7) Given that
+\vspace{-5mm}
+\begin{align*}
+A &= \{ x \in \mathbb{Z} | x=6a+4 \text{ for some int }a \}\\
+B &= \{ y \in \mathbb{Z} | y=18b-2 \text{ for some int }b \}\\
+C &= \{ z \in \mathbb{Z} | x=18c+16 \text{ for some int }c \}
+\end{align*}
+
+a) Prove that $A\subseteq B$
+\vspace{-5mm}
+This means that $$\{ \forall a | (a\in A)\Rightarrow (b\in B)\}$$
+\vspace{-9mm}
+\begin{align*}
+\text{Let: }6a+4 &= 18b-2\\
+\therefore 6a+6 &= 18b\\
+\therefore 6(a+1) &= 6(3b)\\
+a+1&=3b
+\end{align*}
+\vspace{-7mm}
+$$\text{\mybox{TRUE $\{ \exists a \in \mathbb{Z} , \exists b \in \mathbb{Z} | a+1=3b \}  $}}$$
+
+b) Prove $B\subseteq A$ 
+\vspace{-5mm}
+This means that $$\{ \forall a | (a\in B)\Rightarrow (b\in A)\}$$
+\vspace{-9mm}
+\begin{align*}
+\text{Let: } 18b-2 &= 6a+4\\
+\therefore 18b &= 6a+6\\
+\therefore 6(3b) &= 6(a+1)\\
+3b&=a+1
+\end{align*}
+\vspace{-7mm}
+$$\text{\mybox{TRUE $\{ \exists a \in \mathbb{Z} , \exists b \in \mathbb{Z} | 3b=a+1 \}  $}}$$
+
+c) Prove that $B=C$ 
+
+This means that $B\subseteq C$ and $C\subseteq B$
+
+Case One: $B\subseteq C$, This means that $$\{ \forall x | (x\to B)\Rightarrow (x\in C) \}$$
+\vspace{-9mm}
+\begin{align*}
+\text{Let: } 18b-2 &= 18c+16\\
+\therefore 18b &= 18c+18\\
+\therefore 18(b) &= 18(c+1) \\
+b&=c+1
+\end{align*}
+\vspace{-7mm}
+$$\text{\mybox{TRUE $\{ \forall b \in \mathbb{Z} , \forall c \in \mathbb{Z} | b=c+1 \}  $}}$$
+
+\newpage
+
+Case Two: $C\subseteq B$, This means that $$\{ \forall x | (x\to C)\Rightarrow (x\in B) \}$$
+\vspace{-9mm}
+\begin{align*}
+\text{Let: } 18b-2 &= 18c+16\\
+\therefore 18b &= 18c+18\\
+\therefore 18(b) &= 18(c+1) \\
+c+1&=b
+\end{align*}
+\vspace{-7mm}
+$$\text{\mybox{TRUE $\{ \forall c \in \mathbb{Z} , \forall b \in \mathbb{Z} | c+1=b \}  $}}$$
+
+$$\text{\mybox{ $B\subseteq C$ and $C\subseteq B$ so $\therefore B = C$}}$$
+
+\hrulefill
+
+12) Given that 
+\vspace{-5mm}
+\begin{align*}
+A &= \{ x \in {\rm I\!R} | -3 < x \leq 0 \}\\
+B &= \{ x \in {\rm I\!R} | -1 < x < 2 \}\\
+C &= \{ x \in {\rm I\!R} | 6 \leq x \leq 8 \}\\
+A^c &= \{ x \in {\rm I\!R} | (-3>x) \cup (x > 0) \}
+\end{align*}
+
+b) $A\cap B = \{ x \in {\rm I\!R} | -1<x<0 \}$
+
+d) $A\cup C = \{ x \in {\rm I\!R} | (-3\leq x \leq 0)\cup (6<x\leq 8) \} $
+
+f) $B^c = \{ x \in {\rm I\!R} | (-1 \geq x) \cup (x\geq 2) \} $
+
+h) $A^c \cup B^c = \{ x \in {\rm I\!R} | (-1 \geq x) \cup (x>0) \} $
+
+j) $(A\cup B)^c = \{ x \in {\rm I\!R} | (-3>x)\cup (x>2)\}$ 
+
+\hrulefill
+
+15b) Show that $A\subseteq B$, $C\subseteq B$ and $A\cap C \neq \O$
+
+\vspace{30mm}
+
+
+\hrulefill
+
+25) Let $R_i = \{ x \in {\rm I\!R} | -1 \leq x \leq \left( 1 + \displaystyle{\frac{1}{i}} \right) \} = \left[1,1 + \displaystyle{\frac{1}{i}} \right] $
+
+a) $\bigcup\limits_{i=1}^{4}$ $R_4 = \left[ 1,2 \right]$
+
+b) $\bigcap\limits_{i=1}^{4}$ $R_4 = \left[ 1,\displaystyle{\frac{5}{4}} \right]$
+
+c) Yes because the big union notation scopes the entire set, $A_1$ would result in the biggest range and one that is the result of the union
+
+d) [1,2]
+
+e) [1,1]
+
+f) [1,2]
+
+g) [1,1]
+
+\hrulefill
+
+33a) $\mathcal{P}(\O) = \{ \{ \} \}$
+
+33c) $\mathcal{P}(\mathcal{P}(\mathcal{P}(\O))) = \{ \{ \{ \{ \} \},\{ \} \} , \{ \{ \} \} , \{ \}   \}$
+
+\hrulefill
+
+35c) $A\times  (B\cap C) = \{ (a,2),(b,2) $
+
+35d) $(A\times  B)\cap (A\times C)) = \{ (a,2),(b,2) $
+
+\hrulefill
+\end{flushleft}
+\newpage
+\subsection{14, 17, 23b, 32, 35}
+\begin{flushleft}
+
+14) For all sets $A$, $B$ and $C$ if $(A\subseteq B)$ then $(A\cup C)\subseteq (B\cup C)$.
+\vspace{-3mm}
+\begin{align*}
+\text{Since } A\subseteq B, \text{then an integer }x \in A \text{ has to be in set B }&- \text{Definition of a Subset}\\
+\text{Suppose } x \in A, \text{then } x \in (A\cup C) &- \text{Definition of Union}\\
+\text{Suppose } x \in B, \text{ then } x\in (B\cup C) &- \text{Definition of Union}\\
+\text{Since } x \in (A\cup C) \text{ and }  x\in (B\cup C) \text{ then } (A\cup C)\subseteq (B\cup C) &- \text{By Definition of a subset}
+\end{align*}
+\vspace{-5mm}
+$$\text{\mybox{TRUE, Q.E.D.}}$$
+
+\hrulefill
+
+17) For all sets $A$, $B$ and $C$ if $(A\subseteq B)$ and $(A\subseteq C) $ then $(A\cup B)\subseteq C$.
+\vspace{-3mm}
+\begin{align*}
+\text{Since } A\subseteq B, \text{then an integer }x \in A \text{ has to be in set B }&- \text{Definition of a Subset}\\
+\text{Since } A\subseteq B, \text{then an integer }x \in A \text{ has to be in set C }&- \text{Definition of a Subset}\\
+\text{Suppose } x \in A, \text{then } x \in (A\cup B) &- \text{Definition of Union}\\
+\text{Since } x \in (A\cup B) \text{ and }  x \in (C) \text{ then } (A\cup      B)\subseteq C &- \text{By Definition of a subset}
+\end{align*}
+\vspace{-5mm}
+$$\text{\mybox{TRUE, Q.E.D.}}$$
+
+\hrulefill
+
+23b) Prove $A \cap (B \cup C) = (A\cap B)\cup (A\cap C) $ with a drawing.
+
+\vspace{34mm}
+
+\hrulefill
+
+32) For all sets $A$, $B$ and $C$, prove that if $(A\subseteq B)$ and $( B\cap C = \O)$ then $(A\cap C = \O)$
+\vspace{-3mm}
+\begin{align*}
+\text{Since } A\subseteq B, \text{then an integer }x \in A \text{ has to be in set B }&- \text{Definition of a Subset}\\
+\text{Since } (B\cap C = \O), \text{ then an integer }x \in B \text{ cannot be in set C }&- \text{Definition of a Subset and Union}\\
+\text{Since } x \in A \text{ and }x \notin C,  \text{ then } A\cap C = \O &- \text{Definition of Intersection and Null Set}
+\end{align*}
+\vspace{-5mm}
+$$\text{\mybox{TRUE, Q.E.D.}}$$
+
+
+\hrulefill
+
+35) For all sets $A$, $B$ and $C$, prove that if $(A\cap C = \O)$ then $((A\times B)\cap (C\times D) = \O)$
+\vspace{-3mm}
+\begin{align*}
+&\text{Consider } (a_1, a_2) \text{ and } (b_1, b_2), \text{ then  }\text{assume }(A\times B)\cap (C\times D)  = \O - \text{Definition of a Cartesian Product}\\
+&\text{Now }(a_1 \in A \text{ and }a_2 \in B)\cap (b_1 \in C \text{ and } b_2 \in D) = \O - \text{Definition of a Cartesian Product}\\
+&\text{Since } (a_1 \in A \text{ and }a_2 \in B)\cap (b_1 \in C \text{ and } b_2 \in D)=\O \text{ then } (A\subseteq B)\cap (C\subseteq D) = \O - \text{Definition of subset (x2)}\\
+& \text{Since }A \cap C = \O \text{ then } x\in A\text{ and }x\notin C - \text{Definition of an intersection}\\
+& \text{Since }A\subseteq B \text{ then } x\in A \text{ and } x\in B - \text{Definition of a Subset}\\
+& \text{Since }x\notin C \text{ and } C\subseteq D \text{ then } x\notin D - \text{Definition of a Subset}\\
+&\text{We can now replace }(A\subseteq B)\cap (C\subseteq D) \text{ to be }((x\in A) \text{ and }(x\in B))\cap ((x\notin C)\text{ and }(x\notin D)) - Def of Subset
+\end{align*}
+\vspace{-5mm}
+$$\text{\mybox{The final statement is true as 2 sets with no common values is a nullity , Q.E.D.}}$$
+
+
+
+\hrulefill
+\newpage
+\end{flushleft}
+\subsection{10, 20, 35, 73}
+\begin{flushleft}
+
+10) For all the sets $A$, $B$ and $C$ if $(A\subseteq B)$ then $(A\cap B^c \neq \O)$ 
+\vspace{-3mm}
+\begin{align*}
+\text{Since }A\subseteq B \text{ then }x\in A \text{ and }x\in B &- \text{By definition of subset}\\
+\text{Since }x\in A \text{ then } x \notin B^c &- \text{By definition of compliment}\\
+\text{Since }x \notin B^c  = \O &- \text{By definition of intersection, }
+\end{align*}\vspace{-5mm}
+$$\text{\mybox{The final statement is true as 2 sets with no common values is a nullity , Q.E.D.}}$$
+
+\hrulefill
+
+20) For all the sets $A$ and $B$ prove that $\mathcal{P}(A\cap B) = \mathcal{P}(A) \cap \mathcal{P}(B).$
+\vspace{-3mm}
+\begin{align}
+\text{Since } \mathcal{P}(A\cap B) \text{ then } x\in \mathcal{P}(A\cap B) \text{ therefore } x\in (A\cap B) &- \text{Definition of Power Set}\\
+\text{Since } x\in (A\cap B) \text{ then } x\in A  \text{ and } x\in B &- \text{Definition of intersection}\\
+\text{Since }x\in A  \text{ and } x\in B   \text{ then }x\in \mathcal{P}(A)  \text{ and } x\in  \mathcal{P}(B) &- \text{Definition of Power Set }\\
+\text{Since }x\in \mathcal{P}(A)  \text{ and } x\in \mathcal{P}(B) \text{ then }\mathcal{P}(A) \cap \mathcal{P}(B) &- \text{Definition of intersection}\\
+\text{Since } x\in \mathcal{P}(A) \cap \mathcal{P}(B) \text{ then \mybox{$\mathcal{P}(A\cap B) \subseteq \mathcal{P}(A) \cap \mathcal{P}(B)$}}  &- \text{Definition of Subset, (4)\& (1) }\\
+\text{Suppose }  \mathcal{P}(A) \cap \mathcal{P}(B) \text{ then } x\in \mathcal{P}(A) \cap \mathcal{P}(B)  &- \text{Definition of Power Set}\\
+\text{Since } x\in \mathcal{P}(A) \cap \mathcal{P}(B) \text{ then } x\in \mathcal{P}(A)  \text{ and } x\in \mathcal{P}(B)  &- \text{Definition of Intersection}\\
+\text{Since }x\in \mathcal{P}(A) \text{ then }  x\in A  &- \text{Definition of Power Set}\\
+\text{Since }x\in \mathcal{P}(B) \text{ then }  x\in B  &- \text{Definition of Power Set}\\
+\text{Since } x\in A \text{ and } x\in B \text{ then }  x\in (A\cap B)  &- \text{Definition of Intersection }\\
+\text{Since }  x\in (A\cap B) \text{ then } x\in \mathcal{P}(A\cap B) &- \text{Definition of a Power Set}\\
+\text{Since } x\in \mathcal{P}(A) \cap \mathcal{P}(B)  \text{ and }  x\in \mathcal{P}(A\cap B)    \text{ then }  \mybox{$\mathcal{P}(A) \cap \mathcal{P}(B) \subseteq \mathcal{P}(A\cap B)$}  &- \text{Definition of subset }
+\end{align}
+\vspace{-5mm}
+$$\text{ \mybox{$ \mathcal{P}(A) \cap \mathcal{P}(B) \subseteq \mathcal{P}(A\cap B) \text{ and }  \mathcal{P}(A\cap B) \subseteq \mathcal{P}(A) \cap \mathcal{P}(B)    \text{ \textbf{then} } \mathcal{P}(A\cap B) = \mathcal{P}(A) \cap \mathcal{P}(B)$}}$$
+
+\hrulefill
+
+35) For all the sets $A$ and $B$ prove that $A-(A-B) = A\cap B$
+\vspace{-3mm}
+\begin{align*}
+A-(A-B) &= A - (A\cap B^c) \text{- By the set difference law}\\
+		&= A \cap (A\cap B^c)^c \text{- By the set difference law}\\ 
+		&= A \cap (A^c \cup B) \text{- By DeMorgans Law}\\ 
+		&= (A \cap A^c) \cup (A\cap B) \text{- By the Distributive Property}\\ 
+		&= (\O) \cup (A\cap B) \text{- By the complement Law}\\ 
+		&= \text{\mybox{$(A\cap B)$} - By the Identity Law}\\ 
+\end{align*}
+\vspace{-14mm}
+
+\hrulefill
+
+43) Simplify the following - $((A \cap (B \cup C)) \cap (A-B))\cap (B\cup C^c) $
+\begin{center}
+$ ($\textbf{(}$A \cap (B \cup C)$\textbf{)}$ \cap (A\cap B^c))\cap (B\cup C^c)$ - Set Difference Law
+
+$ (A\  \cap $ \textbf{(}$(B \cup C) \cap (A\cap B^c)$\textbf{)}$)\cap (B\cup C^c)$ - Associativity
+
+$ (A\  \cap ( (A\cap B^c)\cap (B \cup C)))\cap (B\cup C^c)$ - Communative
+
+$ ((A \cap (A\cap B^c)) \cap (B \cup C))\cap (B\cup C^c)$ - Associativity
+
+$ (A \cap (B \cup C))\cap (B\cup C^c)$ - Absorption Law
+
+$ A \cap ((B \cup C)\cap (B\cup C^c))$ - Associativity
+
+$ A \cap (B \cup (C\cap C^c)) $ - Distributive property
+
+$A \cap (B \cup \O))$ - Compliment
+
+\mybox{$ A \cap B$} - Identity 
+\end{center}
+\end{flushleft}
+\end{document}

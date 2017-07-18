@@ -1,0 +1,236 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\voffset}{0in}
+\setlength{\headsep}{20pt}
+\setcounter{section}{+7}
+\usepackage{wrapfig,lipsum,booktabs}
+\usepackage{ulem}
+
+\newcommand\tab[1][.8 cm]{\hspace*{#1}}
+\newcommand*{\mybox}[1]{\framebox{#1}}
+
+
+%${\rm I\!R}^3$
+
+\begin{document}
+\title{\vspace{-.5in} Ishan Sethi $|$ ID: 110941217 $|$ CSE 215 $|$ Homework 7 in \LaTeX}
+\author{Professor McDonnell $|$ Assigned: April 25, 2017 $|$ Due: May 4, 2017}
+\date{}
+\maketitle
+\hrulefill
+\tableofcontents
+
+\section{Relations}
+\subsection{6b, 6c, 11, 18, 20}
+\begin{flushleft}
+
+
+6 $X=\{a,b,c\}$ with Relation \textbf{J} such that $A$\textbf{J}$B\Leftrightarrow$ $A\cap B \neq \varnothing$
+
+b) Yes,  $\{a,b \}\cap \{ b,c\} \neq \varnothing$
+
+
+c) Yes,  $\{a,b \}\cap \{ a,b,c\} \neq \varnothing$
+
+
+\hrulefill
+
+
+11) $A=\{3,4,5\}$ and $B=\{4,5,6 \}$ with Relation \textbf{S} such that $x$\textbf{S}$y\Leftrightarrow$ $x| y $, and such that $x\in A$ and $y\in B$ (Definition of Cartesian Product). 
+
+\textbf{S} = $\{ (3,6), (4,4), (5,5) \}$ and \textbf{S$^{-1}$} $= \{ (4,4), (5,5) \}$
+
+\hrulefill
+
+18) $A=\{0,1,2,3,4,5,6,7,8 \}$ and the relation $x$\textbf{V}$y$ means that $5| (x^2 - y^2)$ $\forall x\forall y \in A$
+
+\vspace{40mm}
+
+
+\hrulefill
+
+20) 
+
+\textbf{R} $= \{ (-1,1),(1,1),(2,2)\}$ and
+\textbf{S} $= \{ (-1,1),(1,1),(2,2), (4,2)\}$ and
+\mybox{\textbf{R} $\cap$ \textbf{S} = $= \{ (-1,1),(1,1),(2,2)\}$}
+
+\hrulefill
+\end{flushleft}
+\subsection{7, 17, 33, 36, 40}
+\begin{flushleft}
+
+7) \textbf{A} = $\{ 0,1,2,3\}$ and \textbf{B} = $\{ (0,3),(2,3)\}$
+
+Graph: 
+
+\vspace{10mm}
+
+
+b) Not Reflexive , any of them are counter examples and don't point to themselves.
+
+c) Not Symmetric, 0 points to 3 but 3 does not point to 0, it should be all of them to be symmetric, but a counter example was found.
+
+d) It is Transitive, vacuous truth, the left is never true in the definition for transitivity.
+
+\hrulefill
+
+17) Relation \textbf{P} $\forall m \forall n \in \mathbb{Z} m$\textbf{P}$ \exists$ a prime number such that $ p|m$ and $p|n$
+
+\vspace{2mm}
+
+Reflexive, \textbf{yes} because ($n$\textbf{P}$n$) because if $p|n$ then that is the same as $p|n$.
+
+\vspace{2mm}
+
+Symmetric, \textbf{yes} because (if $m$\textbf{P}$n$ then $n$\textbf{P}$m$)  is the first is true, a conjunction is commutative so the latter holds true as well therefore making this relation symmetric.
+
+\vspace{2mm}
+
+Transitive, (if $m$\textbf{P}$n$ and $n$\textbf{P}$o$ then $m$\textbf{P}$o$) \textbf{yes} because if the first part is satisfies, $m$ is in the factors of $n$, and if $n$ is in the factors of $o$, $m$ is also divisible by definition of transitivity. that means that the factors on $m$ coincide within $o$. This means that $m|o$, which satisfies the relation. 
+
+\hrulefill
+
+33) \textbf{A} = $\{$all lines on the plane$\}$ $\forall l_1 \forall l_2$, $l_1$\textbf{P}$l_2$ $ \Leftrightarrow$ $l_1$ is perpendicular to $l_2$. 
+
+\vspace{2mm}
+
+Reflexive, \textbf{NO}, lines are not perpendicular to themselves, that breaks the definition of being perpendicular (90 degrees), this is 0 degrees.
+
+\vspace{2mm}
+
+Symmetric, \textbf{YES}, when line 1 is perpendicular to line 2, line 2 is perpendicular to line 1.
+
+\vspace{2mm}
+
+Transitivity, \textbf{NO}, if line 1 is perpendicular to line 2, and line 2 is perpendicular to line 3, line 1 is NOT perpendicular to line 3 because line 3 can either be 180 degrees from line 1 or the same line, in both cases the definition of perpendicularity is violated.
+
+\hrulefill
+
+36) \mybox{\textbf{TRUE}}. if the relation \textbf{R} is transitive, this means that if $x$\textbf{R}$y$ and if $y$\textbf{R}$z$ then $x$\textbf{R}$z$ must hold true. Now if we apply the definition of an inverse we get, if  $y$\textbf{R}$^{-1}x$ and $z$\textbf{R}$^{-1}y$ then $z$\textbf{R}$^{-1}x$ which we can do due to law of transitivity. and $z$\textbf{R}$^{-1}x$ is the inverse of $x$\textbf{R}$z$ due to the law of inverses. This proves that it is transitive.
+
+\hrulefill
+
+40) True because \textbf{R}$\cup$\textbf{S} is just combining the reflexive tuples of each and they are all reflexive because reflexive requires the relations to be true for all possible values, thus including those within \textbf{S} for \textbf{R} and \textbf{R} for \textbf{S}
+
+
+\hrulefill
+
+\end{flushleft}
+\subsection{10, 20, 26}
+\begin{flushleft}
+
+10) $[a]$ = $\{x\in A|x=\sqrt{3k+a^2}\text{, For Some }k\in\mathbb{Z}\}$
+
+$[0]$ = $\{ -3, 0, 3 \}$
+
+$[1]$ = $\{ -5,-4,-2,-1,1,2,4,5\}$
+
+All other equivalence classes are equal to the ones above.
+
+\hrulefill
+
+20) $P$\textbf{R}$Q\Leftrightarrow$ P and Q have the same truth tables.
+
+\vspace{2mm}
+
+Reflexive - if $x$ (a certain arrangement of $p$, $q$ or $r$) has a certain truth table it is equivalent to itself so it related to itself $x$\textbf{R}$x$. \underline{It is reflexive}
+
+\vspace{2mm}
+
+Symmetric - if $x$ is equivalent to $y$ because they have the same truth tables, this means that $x$\textbf{R}$y$, likewise, $y$ will also relate to $x$ due to their logical equivalences. \underline{It is symmetric}
+
+\vspace{2mm}
+
+Transitivity - if $x$, $y$ and $z$ all arrangements or $p$, $q$ or $r\in A$ such that $x\equiv y$ and $y\equiv z$ then this means that $x\equiv z$ due to the transitive property we saw in logic arguments in chapter one. \underline{It is transitive}
+
+\vspace{2mm}
+
+Since this relation is reflexive, symmetric and transitive, it is an \textbf{equivalence relation}.
+
+\vspace{2mm}
+
+Distinct equivalent relations:
+\begin{itemize}
+\item $[x\in A] =\{\text{Every element that relates to }x \} $
+\item $[p] =\{\text{Every element that relates to }p \} $
+\item $[q] =\{\text{Every element that relates to }q \} $
+\item $[r] =\{\text{Every element that relates to }r \} $
+\end{itemize}
+
+\hrulefill
+
+26) Given the relation \textbf{Q} on the set of $\mathbb{R}\times \mathbb{R}$, $\forall (w,x) \forall (y,z) \in \mathbb{R}\times \mathbb{R}$ 
+
+\vspace{2mm}
+
+Reflexive - Yes because $(w,x)$\textbf{Q}$(w,x)$ and then $x = x \therefore$ it is reflexive.
+
+\vspace{2mm}
+
+Symmetric - $(w,x)$\textbf{Q}$(y,z)$ = $(y,z)$\textbf{Q}$(w,x)$, true because x = z and z = x. This means it is symmetric.
+
+\vspace{2mm}
+
+Transitive - if $(w,x)$\textbf{Q}$(y,z)$ and $(y,z)$\textbf{Q}$(a,b)$ then $(w,x)$\textbf{Q}$(a,b)$ because if x = z, and z = b, then x = b due to basic transitivity. This results in all of them relating and thus making the relation transitive.
+
+Since this relation is reflexive, symmetric and transitive, it is an \textbf{equivalence relation}.
+
+Distinct classes - 
+
+\begin{itemize}
+\item $[(w,x),(y,z)] =\{\text{Where }x=z\} $
+\item $[(w,x),(y,z)] =\{\text{Where }x\neq z\} $
+\end{itemize}
+
+\hrulefill
+\end{flushleft}
+\subsection{8, 9b, 15, 22}
+\begin{flushleft}
+
+8a) $45 \equiv 3(mod\ 6)$, $6|45-3$, $6|42$ True because $6*7 = 42$ AND $104 = 2(mod\ 6)$, $6|104-2$, $6|102$ True because $6*17 = 102$
+
+8b) $45+104 \equiv 5(mod\ 6)$, $6|(149-5)$, $6|144$ True because $6*19 = 144$
+
+8c) $45-104 \equiv 1(mod\ 6)$, $6|-59-1$, $6|-60$ True because $6*-10 = -60$
+
+8d) $45*104 \equiv (3*2)(mod\ 6)$, $6|4680-6$, $6|4674$ True because $6*769 = -60$
+
+8e) $45^2 \equiv 3^2(mod\ 6)$, $6| 2025-9$, $6|2016$ True because 6(336) = 2016
+
+\hrulefill
+
+9b) 
+\begin{align*}
+(a-b)\equiv (c-d)(mod\ n) &- \text{ Given.}\\
+(a-b)-(c-d) = kn &- \text{ Definition of divisibility} \\
+(a-b)=kn + (c-d) &- \text{ By algebra} \\
+qn+r = kn + (c-d) &- \text{ Quoteint remainder theorem.}\\
+(q-k)n + r = (c-d) &- \text{ Same non-neg remainder $r$ as $a$}\\
+(a-b)mod\ n=r \text{ and }(c-d)mod\ n=r &- \text{ Definition of the MOD function}\\
+n|(a-b)\text{ and }n|(c-d) &- \text{ definition of the mod function and algebra}\\
+a\equiv b(mod\ n)\text{ and }c\equiv d(mod\ n) &- \text{ Definition of congruence modulo, QED} 
+\end{align*}
+
+\hrulefill
+
+15) Units digit of $8^{100}$ = $(8^2)^{50}$ = $(64)^{50}$ = $(2^6)^{50}$ = $(2)^{300} = 6(mod\ 10)$
+
+I was able to confirm this because $2^1 = 2$, $2^2 = 4$, power of 3 yields 8, power of 4 yields 6 in the ones spot, power of 5 yields 2 in the ones place, so it repeats here. What we can say now is that at $2^{300}$, 300 is divisible by 4, ($4*75 = 300$) so now the ones place is 6 at $2^{300}$ or it is $6(mod\ 10)$, QED.
+
+\hrulefill
+
+22) $75004900040$, $7+0+4+0+0+0 = 11 * 3 = 33 + (5+0+9+0+4) = 51$, $60-51 = $\mybox{$9$}.
+
+\hrulefill
+\end{flushleft}
+\newpage
+\subsection{8, 12b, 12c, 15}
+\begin{flushleft}
+
+\end{flushleft}
+
+
+\end{document}

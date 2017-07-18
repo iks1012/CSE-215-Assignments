@@ -1,0 +1,496 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\voffset}{0in}
+\setlength{\headsep}{20pt}
+\setcounter{section}{+1}
+\usepackage{wrapfig,lipsum,booktabs}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+
+
+
+\begin{document}
+\title{\vspace{-.5in} Ishan Sethi $|$ ID: 110941217 $|$ CSE 215 $|$ Homework 1 in \LaTeX}
+\author{Professor McDonnell $|$ Assigned: January 26, 2017 $|$ Due: February 7, 2017}
+\date{}
+\maketitle
+\hrulefill
+\tableofcontents
+
+\section{The Logic Of Compound Statements}
+	\subsection{Pg. 37 - 7, 8B, 8C, 8E, 24, 35}
+	\begin{flushleft}
+
+	7) ``Juan is a Math major but not a computer science major". Let $m$ = ``Juan is a Math major" and $c$ = ``Juan is a computer science major", Logically Evaluate.
+	$$m \land (\sim c)$$
+	
+	\hrulefill
+	8) Let $h =$ ``John is healthy", $w =$ ``John is wealthy" and $s =$ ``John is wise". Logically evaluate the following:
+	
+	b)``John is not wealthy, but he is healthy and wise."
+	
+	$$\sim w \land (h \land s)$$
+	
+	c)``John is neither healthy, wealthy nor wise."
+	
+	$$(\sim h \  \land \sim w)\ \land \sim s$$
+	
+	e)``John is wealthy, but he is not both healthy and wise."
+	
+	$$w \ \land \sim (h \land s)$$
+	
+	\hrulefill
+	
+	24)\ Construct a truth table comparing $(p \lor q) \lor (p \land r)$ and $(p \lor q) \land r$. Show logical equivalency or nonequivalent.
+	
+	\end{flushleft}
+
+	\begin{center}	%THE BEGINNING OF THE TRUTH TABLE NUMBER 24	
+	\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+	$p$ & $q$ & $r$ & $(p \lor q)$ & $(p \land r)$ & $(p \lor q) \lor (p \land r)$ & $(p \lor q) \land r$ \\ \hline
+	T & T & T & T & T & T & T \\ \hline
+	T & T & F & T & F & T & F \\ \hline
+	T & F & T & T & T & T & T \\ \hline
+	T & F & F & T & F & T & F \\ \hline
+	F & T & T & T & F & T & T \\ \hline
+	F & T & F & T & F & T & F \\ \hline
+	F & F & T & F & F & F & F \\ \hline
+	F & F & F & F & F & F & F \\ \hline
+	\end{tabular}
+	\end{center} %THE END OF THE TRUTH TABLE NUMBER 24
+	
+	\begin{flushleft}
+	\textbf{Since $(p \lor q) \lor (p \land r)$ and $(p \lor q) \land r$ have different truth values on rows 2, 4, 5, and 6, $(p \lor q) \lor (p \land r)$ and $(p \lor q) \land r$ are not logically equivalent.}
+	\break
+	
+	\hrulefill
+	
+	35) Negate using DeMorgan's law: $x \leq -1 $ or $x>1$
+	
+	$$Negated\ Statment \to x>-1 \ and\ x\leq 1$$
+	
+	\end{flushleft}
+	
+	\hrulefill
+	
+	
+	%Section 2.2
+	
+	\subsection{Pg. 48 - 10, 11, 14B, 18, 39, 43, 45}
+	\begin{flushleft}
+	Construct truth tables for the following: 
+	
+	10) $(p \to r) \leftrightarrow (q \to r)$	:
+	\end{flushleft}
+	
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|}\hline
+	$p$ & $q$ & $r$ & $(p \to r)$ & $(q \to r)$ & $(p \to r) \leftrightarrow (q \to r) $\\ \hline
+	 T  &  T  &  T  &      T      &      T      &                   T                   \\ \hline
+	 T  &  T  &  F  &      F      &      F      &                   T                   \\ \hline
+	 T  &  F  &  T  &      T      &      T      &                   T                   \\ \hline
+	 T  &  F  &  F  &      F      &      T      &                   F                   \\ \hline
+	 F  &  T  &  T  &      T      &      T      &                   T                   \\ \hline
+	 F  &  T  &  F  &      T      &      F      &                   F                   \\ \hline
+	 F  &  F  &  T  &      T      &      T      &                   T                   \\ \hline
+	 F  &  F  &  F  &      T      &      T      &                   T                   \\ \hline
+	\end{tabular}
+	\end{center}
+	\hrulefill
+	\begin{flushleft}
+	11) $(p \to (q \to r)) \leftrightarrow ((p \land q) \to r)$	\	:
+	\end{flushleft}
+	
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
+	$p$ & $q$ & $r$ & $(q \to r)$ & $(p \land  q)$ & $(p \to (q \to r))$& $((p \land q) \to r)$ & $(p \to (q \to r)) \leftrightarrow ((p \land q) \to r)$ \\ \hline
+	
+	T & T & T & T & T & T & T & T \\ \hline
+	T & T & F & F & T & F & F & T \\ \hline
+	T & F & T & T & F & T & T & T \\ \hline
+	T & F & F & T & F & T & T & T \\ \hline
+	F & T & T & T & F & T & T & T \\ \hline
+	F & T & T & F & F & T & T & T \\ \hline
+	F & F & T & T & F & T & T & T \\ \hline
+	F & F & F & T & F & T & T & T \\ \hline
+	\end{tabular}
+	\end{center}
+	
+	\begin{flushleft}
+	\hrulefill
+	
+	14b) Show the logical equivalent of the following in two separate ways:
+	
+	``If $n$ is prime, then $n$ is odd or $n$ is 2."
+	 
+	Let $p = n$ is prime, $q = n$ is odd, and $r = n$ is 2.
+	
+	$$(\sim (q \lor r) \to \  \sim p)\  (contrapositive)      \ and \ (\sim (	\sim q \  \land \ \sim r) \to \ \sim p)\ (DeMorgan's\ law\ for\ q\lor r)$$
+	
+\hrulefill	
+	
+	18) Rewrite the statements in if-then form:
+	
+	Let $w = $ ``walks like a duck'', $t = $ ``talks like a duck'' and $d = $ ``it is a duck."
+	
+	``If it walks like a duck and talks like a duck, then it is a duck"
+	
+	$$(w \land t) \to d$$
+	
+	``Either it does not walk like or it does not talk like a duck, or it is a duck"
+	
+	$$(\sim w \ \lor \sim t) \lor d$$
+	
+	``If it does not walk like a duck and it doesn't talk like a duck, then it is not a duck"
+	
+	$$(\sim w \  \land \sim t) \to \ \sim d$$
+	
+\hrulefill
+	
+	39) Rewrite in if-then form:
+	
+	Let $s =$ ``security code is entered" and $d = $ ``door will not open."
+	
+	`` This door will not open unless a security code is entered"
+	
+	New Statement: ``If the security code is not entered, then the door will not open"
+	
+	$$\sim s \to d$$
+	
+\hrulefill	
+	
+	43) Rewrite in if-then form
+	
+	Let $a$ = ``Doing homework regularly" and $b$ = ``Jim to pass the course." 
+	
+	``Doing homework regularly is a necessary condition for Jim to pass the course." \ \ \ \ \ 
+	
+	$$a \to b$$
+
+\hrulefill	
+	
+	45) Rewrite in if-then form
+	
+	Let $a$ = ``not produce error messages during translation" and $b$ = ``computer program to be correct". 
+	
+	``A necessary condition for this computer program to be correct is that it not produce error messages during translation."
+	
+	$$ a \to b$$
+	
+	\end{flushleft}
+	\hrulefill
+	
+	
+	
+	
+	%Section 2.3
+	
+	\subsection{Pg. 60 - 5, 9, 30, 32, 40, 44}
+	\begin{flushleft}
+	5) If they were unsure of the address, then they would have telephoned.
+	
+	\textit{\underline{$\to$They did not telephone}}
+	
+	$\therefore$ They were sure of the address. (Modus Tollen).
+	
+	\hrulefill
+	
+	9)\begin{center} \textbf{Premises:} 
+			
+				 $p \land q \to \ \sim r$
+	
+				   $p \ \lor \sim q$
+				  
+				   $\sim q \to p$
+				  
+	 \textbf{Conclusion}: 
+	 
+	  $\therefore \  \sim r$
+	 
+	\end{center}
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\hline
+	$p$ & $q$ & $r$ & $\sim r$ & $(p \land  q)$ & $\sim q $& $\sim q \to p $ & $ p \ \lor \sim q$ & $p \land q \to \ \sim r $ & $\sim r$ \\ \hline
+	
+	T & T & T & F & T & F & T & T & F & F   \\ \hline
+	T & T & F & T & T & F & T & T & T & T   \\ \hline
+	T & F & T & F & F & T & T & T & T & F   \\ \hline
+	T & F & F & T & F & T & T & T & T & T   \\ \hline
+	F & T & T & F & F & F & T & F & T & F   \\ \hline
+	F & T & T & T & F & F & T & F & T & T   \\ \hline
+	F & F & T & F & F & T & F & T & T & F   \\ \hline
+	F & F & F & T & F & T & F & T & T & T   \\ \hline
+	\end{tabular}
+	\end{center}
+	\textbf{Deduction: Rows 2 and 4 show that the conclusion is true when all the premises are all true. But on row 3, all the premises are true but the conclusion is false thus making this argument invalid.}
+		
+	\hrulefill
+	
+	30) If this computer program is correct, then it produces the correct output when my teacher runs the test data on it.
+	
+	$\to$The computer program produces the correct output from the test data.
+	
+	$\therefore$ The computer program is correct
+	
+	Let 
+	
+	$c$ = ``computer program is correct"
+	
+	$t$	= ``computer program passes test"
+	
+	$$c \to t$$
+	$$t$$
+	$$\therefore c$$
+		
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}\hline
+	$c$&$t$&$c \to t$&$c$ \\ \hline
+	
+	T&T&T&T \\ \hline
+	T&F&F&T \\ \hline
+	F&T&T&F \\ \hline
+	F&F&T&F \\ \hline	
+	
+	\end{tabular}
+	\end{center}
+	
+	$\to$ \textit{Since on row 3 all the premises are true but the conclusion is false, the argument is invalid.}
+	
+	\textit{This is a converse error, just because the 2nd part of a conditional statement is true, the first statement can be T/F, thus forming ambiguity as to what it is therefore making the whole statement true.}
+	
+	\hrulefill
+	
+	32) 
+	
+	$\to$If I get a Christmas bonus, then I'll get a stereo.
+		
+	$\to$If I sell my motorcycle, then I'll get a stereo.
+			
+	$\therefore$ If I get a Christmas bonus or I sell my motorcycle, then I will buy my stereo.
+				
+	Let
+	
+	$c$ = Christmas bonus
+	
+	$s$ = get stereo
+	
+	$m$ = sell motorcycle
+	
+	$$c \to s$$
+	$$m \to s$$
+	$$\therefore m \lor c \to s$$
+	
+	This argument is valid because: 
+	$$\therefore (c \lor m) \to s \ -\ \mathrm{Proof \ by \ Division \ into \ cases}$$
+
+ This is true because of the fact that if any of the statements are true (c or m or s), the others have to accommodate in order to make the givens true. So if c was false and m was false, s can be anything as this will make anything true. If c is true, then s has to be true to obey the given. If m is true, then s has to be true to obey the given. If c or m are true then s has to be true which lets the argument be valid.
+	
+
+	\hrulefill
+	
+	
+	40) Sharky, a leader of the underworld, was killed by one of his own band of four henchmen. Detective Sharp interviews the men and determines all were lying except one. He deduced who killed Sharky on the basis of the of the following statement:
+	
+	a) Socko: Lefty killed Socko
+	
+	b) Fats: Muscles didn't kill Sharky
+	
+	c) Lefty: Muscles didn't kill Sharky
+	
+	d) Muscles: Lefty didn't kill Sharky
+
+	\textbf{Analysis: }
+	\begin{center}
+	\begin{tabular}{|c|c|} \hline
+	Inference/Statement & Reasoning	\\ \hline
+	Statements a and d are negations so one must be true, this makes b and c false & Elimination  \\ \hline
+	
+	If ``Muscles didn't kill Sharky" is false, then the negated statement must be true & Modus Ponen \\ \hline
+	
+	\textbf{Muscles Killed Sharky} & Negation\\ \hline
+	
+	
+	\end{tabular}
+	\end{center}	
+	
+	\hrulefill	
+	
+	
+	44) 
+	
+	 \textbf{a) $p \to q$ $\dagger$ b) $r \lor s$ $\dagger$ c) $\sim s \to \  \sim t $ $\dagger$ d) $\sim q \lor s$ $\dagger$ e) $\sim s$ $\dagger$ f) $\sim p \land r \to u$ $\dagger$ g) $w \lor t$}
+	
+\textbf{h) $\therefore u \land w$}	
+	
+	\begin{center}
+	\begin{tabular}{|l|c|} \hline
+	
+	d) $\sim q \lor s$	& Given \\ 
+	e) $\sim s$			& Given \\ 
+   $\therefore \ \sim q$& 1) Elimination \\ \hline
+    %-------------------------------------------------
+	a) $p \to q$		& Given \\
+	1) $\sim q$			& From step 1\\
+	 $\therefore r $    & 2) Modus Tollen \\ \hline
+	%--------------------------------------------------
+	b) $r \lor s$		& Given \\
+	e) $\sim s$			& Given \\
+	$\therefore r$		& 3) Elimination \\ \hline
+	%--------------------------------------------------
+	3) $r$				& From step 3 \\
+	2) $\sim p$			& From step 2 \\
+$\therefore\sim p\land r$&4) Conjunction\\ \hline
+	%--------------------------------------------------
+	f)$\sim p \land r \to u$& Given \\
+	4) $\sim p \land r$	& From step 4 \\
+	$\therefore u$		& 5) Modus Ponen \\ \hline
+	%--------------------------------------------------
+	c)$\sim p \to \sim t$& Given \\
+	e) $\sim s$			& Given \\
+	$\therefore \sim t$	& 6) Modus Ponen \\ \hline
+	%--------------------------------------------------
+	g) $w \lor t$		& Given \\
+	6) $\sim t$			& From step 6 \\
+	$\therefore w$		& 7) Elimination \\ \hline
+	%--------------------------------------------------
+	7) $w$				& From step 7 \\
+	5) $u$				& From step 5 \\ \hline
+	%--------------------------------------------------
+	$\therefore  u \land w$ & 8) Conjunction \\ \hline
+	%--------------------------------------------------
+	
+	
+	\end{tabular}	
+	\end{center}
+	
+	
+	
+	
+	
+	
+	
+	\end{flushleft}
+
+\hrulefill
+
+
+	\subsection{Knights and Knaves problem}
+	\begin{flushleft}
+A: ``C is a Knave." (Knaves tell the lie)
+
+B: ``A is a Knight." (Knights tell the truth)
+
+C: ``I am the spy." (Spy's can tell the lie or the truth)
+
+
+\begin{enumerate}
+\item Suppose what C says is true (C is a spy) $\therefore$ A and B would both be knaves as B says A is a knight so A has to tell the truth (definition of Knight) but A doesn't as C would be the spy and by the transitive property B would also be a liar (definition of a knave).
+
+\item Suppose B is right, this would make A the Knight (Through Supposition). 
+
+$\therefore$ C is a knave, this is true because A tells the truth (Definition of a Knight)
+
+$\therefore$ B is a spy (Through elimination) this would yield \textbf{A as the Knight, B as the spy and C as the Knave.}
+
+Assuming A as truthful would be unnecessary as supposing B is true yields in A being true.
+
+
+
+\end{enumerate}	
+	
+	\end{flushleft}
+	
+	
+\hrulefill
+
+	\subsection{Digital Logic Problems}
+	
+	1. Find the Boolean Expression. 
+	Answer: $$\sim (\sim P \lor (P \lor Q))\land (\sim S \lor (R \land S))$$
+	
+	\begin{flushleft}
+	2. I/O table for the circuit
+	Answer: $\sim P \lor ((Q \land R) \lor \sim Q) \equiv S$
+	
+	
+    
+	\begin{center}
+	\begin{tabular}{|ccc|c|}\hline
+	P&Q&R&S \\ \hline
+	1&1&1&1 \\ 
+	1&1&0&0 \\
+	1&0&1&1 \\ 
+	1&0&0&1 \\ 
+	0&1&1&1 \\ 
+	0&1&0&1 \\ 
+	0&0&1&1 \\ 
+	0&0&0&1 \\ \hline
+	
+	\end{tabular}
+	\end{center}
+	
+	3. Find the Boolean Expression
+	Answer: $$(P\land Q\land R) \lor (P\land \sim Q\ \land \sim R) \lor (\sim P\ \land \sim Q\ \land \sim R)$$
+	
+	4. Draw the Circuit for $T=(\sim P \lor (\sim Q \lor (Q \land R)))\ \land \sim ((R \land S)\  \lor \sim S)$:
+	\begin{center}
+	\includegraphics[scale = 1.5]{DLCNumber4}
+	\end{center}
+	
+	
+	5. Draw the circuit from the I/O table:
+	
+	\begin{center}
+	\begin{tabular}{|ccc|c|}\hline
+	P&Q&R&S \\ \hline
+	1&1&1&1 \\ 
+	1&1&0&1 \\
+	1&0&1&0 \\ 
+	1&0&0&0 \\ 
+	0&1&1&0 \\ 
+	0&1&0&1 \\ 
+	0&0&1&0 \\ 
+	0&0&0&1 \\ \hline
+	
+	\end{tabular}
+	\end{center}
+	Simplification: 
+	$(P\land Q\land R)\lor (P\land Q\land \sim R)\lor (\sim P\land Q\land \sim R)\lor (\sim P\land \sim Q\land \sim R) \newline \tab \tab \tab \hspace{-.42cm}(P \land Q)\lor (\sim P \land \sim R)$ 
+	
+	
+	Digital Logic Circuit:
+	\begin{center}
+	\includegraphics[scale = 1.5]{DLCNumber5}
+	\end{center}
+		
+	6) Draw a circuit that only outputs 1 if the sum of the numbers are atleast 2 and R is 1.	
+	
+	\begin{center}
+	\begin{tabular}{|ccc|c|}\hline
+	P&Q&R&S \\ \hline
+	1&1&1&1 \\ 
+	1&1&0&0 \\
+	1&0&1&1 \\ 
+	1&0&0&0 \\ 
+	0&1&1&0 \\ 
+	0&1&0&0 \\ 
+	0&0&1&1 \\ 
+	0&0&0&0 \\ \hline
+	\end{tabular}
+	$S \equiv (P\land Q\land R)\lor (P\land \ \sim Q\land R)\lor (P\land \ \sim Q\land R) $
+	\end{center}
+	
+	Digital Logic Circuit:
+	\begin{center}
+	\includegraphics[scale = 1.5]{DLCNumber6}
+	\end{center}	
+	
+	
+	\end{flushleft}
+\end{document}

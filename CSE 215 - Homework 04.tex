@@ -1,0 +1,465 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\voffset}{0in}
+\setlength{\headsep}{20pt}
+\setcounter{section}{+4}
+\usepackage{wrapfig,lipsum,booktabs}
+\usepackage{ulem}
+
+\newcommand\tab[1][.8 cm]{\hspace*{#1}}
+\newcommand*{\mybox}[1]{\framebox{#1}}
+
+
+%${\rm I\!R}^3$
+
+\begin{document}
+\title{\vspace{-.5in} Ishan Sethi $|$ ID: 110941217 $|$ CSE 215 $|$ Homework 4 in \LaTeX}
+\author{Professor McDonnell $|$ Assigned: March 16, 2017 $|$ Due: March 28, 2017}
+\date{}
+\maketitle
+\hrulefill
+\tableofcontents
+
+\section{Sequences, Mathematical Induction and Recursion}
+\subsection{11, 21, 39, 53, 56}
+\begin{flushleft}
+
+11) $0,\ \frac{-1}{2},\  \frac{2}{3},\  \frac{-3}{4},\  \frac{4}{5},\  \frac{-5}{6},\  \frac{6}{7} $, given this pattern, to get to the $k^{th}$ term $\forall k \geq 0 \in \mathbb{Z}$ $$ a_k = \frac{(-1)^{k}\ k}{k+1}$$
+
+\hrulefill
+
+21) $\displaystyle{\sum\limits_{k=-1}^{1} (k^2+3) = }$
+\begin{center}
+$\displaystyle{((-1)^2+3)+((0)^2+3)+((1)^3+3) =}$ \mybox{11}
+\end{center} 
+
+\hrulefill
+
+39) $(1^3-1)-(2^3-1)+(3^3-1)-(4^3-1)+(5^3-1)\  =$
+
+\begin{center}
+\mybox{$\displaystyle{\sum\limits_{k=0}^{4}\ (-1)^k\cdot((k+1)^3-1)}$}
+\end{center}
+
+\hrulefill
+
+53) $\displaystyle{\prod\limits_{i=n}^{2n} \frac{n-i-1}{n+1}}$ $\to$ $j=i-1$ and $j+1=i$ $\therefore$ $n=i$. After subbing these in we get 
+\begin{center}
+$\displaystyle{\prod\limits_{i=k}^{2n} \frac{-n+i-1}{1-n}}$ $\to$ \mybox{$\displaystyle{\prod\limits_{j=n-1}^{2n-2} \frac{-n+j}{1-n}}$}
+
+\end{center}
+
+
+\hrulefill
+
+56) $\displaystyle{\prod\limits_{k=1}^{n}\frac{k}{k+1}} \cdot \displaystyle{\prod\limits_{k=1}^{n}\frac{k+1}{k+2}}$ $=$ $\displaystyle{\prod\limits_{k=1}^{n}\frac{k}{k+1}\cdot\frac{k+1}{k+2} = }$ 
+
+\begin{center}
+\mybox{$\displaystyle{\prod\limits_{k=1}^{n}\frac{k}{k+2}}$}
+\end{center}
+\hrulefill
+\newpage
+\subsection{4, 9, 16, 27}
+
+4a) $\displaystyle{\sum\limits_{i=1}^{n-1} i(i+1) = \frac{n(n-1)(n+1)}{3}}$ that is $\forall n \geq 2 \in \mathbb{Z}$
+
+\underline{Base Case:} $n=2$ $\Rightarrow$ $\displaystyle{\sum\limits_{i=1}^{1}1(2)=\frac{2\cdot1\cdot3}{3}}$ 
+
+4b) \underline{Inductive Step:} Suppose $P(k)$ $=$ $\overbrace{1(1+1)+...+k(k+1) = \displaystyle\frac{k(k-1)(k-2)}{3}}\limits^{\text{\textbf{Inductive Hypothesis}}}$
+
+\vspace{4mm}
+
+4c) $P(k+1)$
+
+$$ \overbrace{1(1+1)+...+k(k+1)}\limits^{\text{What the I.H. is equal to}} + (k+1)((k+1)+1) = \displaystyle{\frac{k(k+1)(k+2)}{3}}$$
+
+4d) What we have to do
+
+\begin{itemize}
+\item In the base step one must show that the lowest possible value is true
+
+\item In the Inductive Step, you assume that $P(k)$ is true such that $k$ is any integer greater than or equal to 2. Then you show that $P(k+1)$ is true.
+\end{itemize}
+
+\hrulefill
+
+
+\vspace{2mm}
+9) Let $P(n)$ be the statement saying that $4^3 + 4^4 + 4^5 + ... + 4^n = \displaystyle{\frac{4(4^n -16)}{3}} $ is true $\forall n\geq 3\in \mathbb{Z}$.
+
+\vspace{3mm}
+
+\underline{Base Case:} The Statement $P(3)$ would mean that we would use $3$ for $n$ and make sure that the original claim is true for the most basic value given the parameters of the claim (In this case its $\forall n\geq 3\in \mathbb{Z}$).
+ 
+\vspace{3mm}
+
+\underline{Inductive Step:} Assume that $P(k)$ is true $\forall k\geq 3 \in \mathbb{Z}$
+
+This would make the claim that $\underbrace{4^3 + 4^4 + 4^5 + ... + 4^k = \displaystyle{\frac{4(4^k-16)}{3}}}\limits_{\text{\textbf{Inductive Hypothesis}}}$
+
+$\text{Now we show that $P(k+1)$ is also true: } 4^3 + 4^4 + 4^5 + ... + 4^k+4^{k+1} = \displaystyle{\frac{4(4^{k+1}-16)}{3}}$
+
+\begin{align*}
+\displaystyle{\frac{4(4^k-16)}{3}} + 4^{k+1}&= \displaystyle{\frac{4(4^{k+1}-16)}{3}}\\
+\displaystyle{\frac{4(4^k-16)+ 3\cdot 4^{k+1}}{3}}&= \displaystyle{\frac{4^{k+2}}{3}-\frac{16\cdot 4}{3}}\\
+\displaystyle{\frac{4^{k+1}}{3}- \frac{64}{3}} + \frac{3\cdot 4^{k+1}}{3}  &= \displaystyle{\frac{4^{k+2}}{3}-\frac{16\cdot 4}{3}}\\
+\displaystyle{\frac{4^{k+1}}{3}+ \frac{3\cdot 4^{k+1}}{3}- \frac{64}{3}  }&= \displaystyle{\frac{4^{k+2}}{3}-\frac{64}{3}}\\
+\displaystyle{4^{k+1}\cdot\left(\frac{1}{3}+ \frac{3}{3}\right)- \frac{64}{3}  }&= \displaystyle{\frac{4^{k+2}}{3}-\frac{64}{3}}\\
+\displaystyle{4^{k+1}\cdot\left(\frac{4}{3}\right)- \frac{64}{3}  }&= \displaystyle{\frac{4^{k+2}}{3}-\frac{64}{3}}\\ 
+\underbrace{\displaystyle{4^{k+2}\cdot\left(\frac{1}{3}\right)- \frac{64}{3}  }}\limits_{\text{This is what we wanted}}&= \displaystyle{4^{k+2}\cdot\left(\frac{1}{3}\right)- \frac{64}{3}  }\\ 
+\end{align*}
+\newpage
+
+\vspace{3mm}
+
+16) $P(n)$ states that $\displaystyle{\left(1-\frac{1}{2^2}\right)\cdot\left(1-\frac{1}{3^2}\right)\cdot \cdot \cdot\left(1-\frac{1}{n^2}\right) = \frac{n+1}{2n}}$ is true $ \forall (n\geq 2) \in \mathbb{Z}$ 
+
+\vspace{5mm}
+
+\underline{Base Case:} The statement $P(2)$ would mean that we would use $2$ for n and make sure that the original claim is true for the a value within the parameters of the claim (In this case its $\forall n\geq 2\in \mathbb{Z}$).
+
+\vspace{5mm}
+
+\underline{Inductive Step:} Assume that $P(k)$ is true $\forall k\geq 2 \in \mathbb{Z}$
+
+This would make the claim that $\underbrace{\displaystyle{\left(1-\frac{1}{2^2}\right)\cdot\left(1-\frac{1}{3^2}\right)\cdot \cdot \cdot\left(1-\frac{1}{k^2}\right) = \frac{k+1}{2k}}}\limits_{\text{This is the Inductive Hypothesis}}$
+
+\vspace{5mm}
+
+$\text{Now we show that $P(k+1)$ is also true: }
+\displaystyle{\left(1-\frac{1}{2^2}\right)\cdot\left(1-\frac{1}{3^2}\right)\cdot \cdot \cdot\left(1-\frac{1}{k^2}\right)\cdot\left(1-\frac{1}{(k+1)^2}\right)} = \displaystyle{\frac{(k+1)+1}{2(k+1)}}$
+
+\begin{align*}
+\displaystyle{\frac{k+1}{2k}\cdot\left(1-\frac{1}{(k+1)^2}\right)} &= \displaystyle{\frac{(k+1)+1}{2(k+1)}}\\
+\displaystyle{\frac{(k+1)\cdot ((k+1)^2-1)}{2k\cdot (k+1)\cdot (k+1)}} &= \displaystyle{\frac{k+2}{2k+2}}\\
+\displaystyle{\frac{((k+1)^2-1)}{2k\cdot (k+1)}} &= \displaystyle{\frac{k+2}{2k+2}}\\
+\displaystyle{\frac{k^2+2k+1-1}{2k^2+2k}} &= \displaystyle{\frac{k+2}{2k+2}}\\
+\displaystyle{\frac{k^2+2k}{2k^2+2k}} &= \displaystyle{\frac{k+2}{2k+2}}\\
+\displaystyle{\frac{k\cdot (k+2)}{k\cdot (2k+2)}} &= \displaystyle{\frac{k+2}{2k+2}}\\
+\displaystyle{\underbrace{\frac{k+2}{2k+2}}\limits_{\text{This is what we wanted}}} &= \displaystyle{\frac{k+2}{2k+2}}\\
+\end{align*}
+
+\hrulefill
+
+\vspace{3mm}
+27) $\displaystyle{5^3+5^4+5^5+...+5^n = \underbrace{\frac{r^{n+1}-1}{r-1}}\limits_{S_n}}$ This is dependent on the value of $k$ so we can only get a sum in terms of $k$
+
+$$S_k = \frac{5^{k+1}-1}{5-1} = \frac{5^{k+1}-1}{4}$$
+
+\hrulefill
+$$\text{This is the end of 5.2, 5.3 is on the next page}$$
+\newpage
+\subsection{15, 22, 27}
+
+15) $P(n)$ states that $n\cdot (n^2 + 5)$ is divisible by 6 $\forall n\geq 0 \in \mathbb{Z}$
+
+\vspace{3mm}
+
+\underline{Base Case:} 
+
+$n=0$, $0(0^2+5) = 0$ and $6|0$ is true.
+
+\vspace{3mm}
+
+\underline{Inductive Step:} 
+
+Suppose $P(k)$, that would make the claim that $\forall k\geq 0 \in \mathbb{Z}$, $\underbrace{6|k(k^2+5) \text{ or }6|(k^3+5k)}\limits_{\text{This is the Inductive Hypothesis}}$ are both true.
+
+Now we need to show $P(k+1)$ is true.
+
+\begin{align*}
+6 &| (k+1)((k+1)^2+5) \\
+6 &| (k^3 + 2k^2 + k + 5k + k^2 + 2k + 1 + 5) \\
+6 &| (k^3 + 3k^2 + 3k + 5k + 6) \\
+6 &| \underbrace{(k^3 + 5k)}\limits_{\text{I.H.}} + (3k^2 + 3k + 6) \\
+\intertext{We need to prove that $6|(3k^2+3k+6)$ is true:}
+\end{align*}
+
+We have $(3k^2+3k+6)$ which can be rewritten as $3k(k+1)+6$ then $3(k(k+1)+2)$.
+
+\tab From this we can say that $k(k+1)$ is an even number because if $k$ is odd, $k+1$ is even and an even time an odd is even. If $k$ is even, $k(k+1)$ is even because if the multiples of a number consists an even number, the product is even.
+
+\tab If $k(k+1)$ is even then $k(k+1)+2$ is also even as $2$ is even and an even plus an even is also even. $3$ times $(k(k+1)+2)$ has to be divisible by $6$ $\forall k\geq 0 \in \mathbb{Z}$ as 3 times an even number is divisible by 6. This makes $6| (3\cdot (k(k+1)+2))$ true $\forall k\geq 0 \in \mathbb{Z}$. 
+
+This in the makes makes out final claim of $6 | (k^3 + 3k^2 + 3k + 5k + 6) $ true as the sum of two numbers ($(k^3+5k)$ and $3k^2+3k+6$) that are each divisible by another number ($6$) is also divisible by that number ($6$).
+
+$$\text{\mybox{QED}}$$
+
+\hrulefill
+
+22) $P(n)$ states that $1+nx \leq (1+x)^n$ is true $\forall n\geq 2 \in \mathbb{Z}$ and $\forall x>-1 \in {\rm I\!R}$
+
+\underline{Base Case:} $n=2$ 
+
+\begin{align*}
+1+nx &\leq (1+x)^n \\
+1+2x &\leq (1+x)^2 \\
+1+2x &\leq 1+2x+x^2 \\
+0 &\leq x^2
+\end{align*}
+$$\text{This is true $\forall x > -1 \in {\rm I\!R}$}$$
+
+\underline{Inductive Step:} $\forall k \geq 2 \in \mathbb{Z}$ and $\forall x>-1 \in {\rm I\!R}$, $\underbrace{P(k)\text{ states that }1+kx \leq (1+x)^k}\limits_{\text{Inductive Hypothesis}}$
+
+Now we need to show true for $P(k+1)$ 
+$$\text{On the Next Page}$$
+\newpage
+Now we need to show true for $P(k+1)$ 
+\begin{align}
+1+(k+1)x &\leq (1+x)^{k+1}\\
+1 + kx + x &\leq (1+x)^k \cdot (1+x)^1
+\intertext{If we take a look at the I.H. and manipulate that by adding x to both sides...}
+1+kx+x &\leq (1+x)^{k}
+\intertext{We need to show that }
+(1+x)^k+x &\leq (1+x)^{k+1}\\
+(1+x)^k+x &\leq (1+x)^k\cdot (1+x)\\
+(1+x)^k+x &\leq (1+x)^k\cdot 1 + (1+x)^k\cdot x\\
+x &\leq (1+x)^k\cdot x\\
+1 &\leq (1+x)^k
+\end{align}
+This is true for $\forall x > -1 \in {\rm I\!R}$ and $\forall k \geq 2 \in \mathbb{Z}$
+
+$$\text{\mybox{This means that $1+kx+x \leq (1+x)^k+x \leq (1+x)^{k+1}$ is true, which is what we wanted}}$$
+
+\hrulefill
+
+27) Given $d_1, d_2, d_3,...$ and $d_1=2$ and $\displaystyle{d_k = \frac{d_{k-1}}{k}}$, $\forall k \geq 2 \in \mathbb{Z}$ 
+
+Prove the following, $P(n)$ states that $\forall n \geq 1 \in \mathbb{Z}$, $\displaystyle{d_n=\frac{2}{n!}}$ is true 
+
+\underline{Base Case:} Let $n=2$ so show $P(2)$; $d_2= \displaystyle{\frac{2}{2}} = 1$ and $d_2 = \displaystyle{\frac{2}{2!}}=1$; so the base case is true for the thing that we are trying to prove.
+
+\underline{Inductive Step:} Let $P(c)$ state that $\underbrace{d_c = \displaystyle{\frac{2}{c!}}}\limits_{I.H.}$ is true $\forall c\geq 1 \in \mathbb{Z}$. This would make it so that $d_c = \displaystyle{\frac{d_{c-1}}{c}}$
+
+Now we need to show $P(c+1)$
+
+$d_{c+1} = \displaystyle{\frac{2}{(c+1)!} = \frac{d_{c+1-1}}{c+1} = \frac{d_c}{c+1} = \frac{2/(c!)}{c+1} = \frac{2}{c!(c+1)}} =$ \mybox{$\displaystyle{\frac{2}{(c+1)!}}$} Which is what we wanted.
+
+
+
+\hrulefill
+$$\text{This is the end of 5.3, 5.4	 is on the next page}$$
+\newpage
+\subsection{2, 7}
+
+2) Given that $b_1 = 4$, $b_2 = 12$ and $b_k = b_{k-2} + b_{k-1}$ $\forall k\geq 3 \in \mathbb{Z}$
+
+Prove that $(4|b_k)$ is true.
+
+\vspace{3mm}
+
+\underline{Base Case:} $(4|b_1)$ = $(4|4)$, This is true. $(4|b_2)$ = $(4|12)$, This is also true, so the base case holds true.
+
+\vspace{3mm}
+
+\underline{Inductive Step:} Let the statement $P(c)$ be that $(4|b_c)$ whilst $b_c = b_{c-2}+b_{c-1}$ $\forall c \geq 1 \in \mathbb{Z}$. Suppose its true. This is the \textbf{Inductive Hypothesis}.
+
+\vspace{3mm}
+Now we need to show $P(c+1)$ and that its true. $P(c+1)$ would say that $b_{c+1} = b_{c-1}+b_{c}$ and that $(4|b_{c+1})$.
+
+In $b_{c-1}$, we can concur that $c-1$ has to be greater than or equal to $1$ so in this case, $c\geq 2$, which means that the lowest possible value for $c$ is 2, which makes the lowest possible for $b_c = 12$ which is divisible by 4 as seen in the base case. so for any value greater than 2, $b_c$ has $b_2$ in it and shows multiple iterations of it. So this MUST mean that $b_c$ is divisible by 4 $\forall c \geq 1 \in \mathbb{Z}$ because a multiple of 4 is divisible by 4. \mybox{QED}
+
+\hrulefill
+
+7) Given the series $g_1, g_2, g_3,...$ the initial conditions $g_1 = 3$, $g_2 = 5$ and the general equation $g_k = 3g_{k-1}-2g_{k-2}$ $\forall k\geq3 \in \mathbb{Z}$
+
+Prove that $P(n)$, $g_n = 2^n + 1$, is true $\forall n \geq 1 \in \mathbb{Z}$
+
+\vspace{3mm}
+
+\underline{Base Case:} 
+
+$P(1)$, $g_1 = 3$ (Given) 
+
+$P(1)$, $g_1 = 2^1 + 1 = 3$ - True for $n = 1$
+
+$P(2)$, $g_2 = 5$ (Given) 
+
+$P(2)$, $g_2 = 2^2 + 1 = 5$ - True for $n = 2$
+
+\vspace{3mm}
+
+\underline{Inductive Step:}
+
+We need to suppose $P(c)$ which would say that $\underbrace{g_c=2^c+1\ \ \forall c\geq 1\in \mathbb{Z}}\limits_{\text{Inductive Hypothesis}}$
+
+Now we need to show that $P(c+1)$
+
+
+\setcounter{equation}{0}
+\begin{align*}
+g_{c+1} &= 2^{c+1} + 1\\
+g_{c+1} &= 3\cdot g_{c} - 2\cdot g_{c-1}\\
+g_{c-1} &= 2^{c-1}+1\\
+g_{c+1} &= 3(2^c+1) - 2(2^{c-1}+1)\\
+g_{c+1} &= 3\cdot 2^c + 3 - 2^c -2\\
+g_{c+1} &= 2\cdot 2^c + 1\\
+g_{c+1} &= 2^{c+1} + 1
+\intertext{$g_{c+1} = 2^{c+1} + 1$ is what we wanted, this is the Inductive Hypothesis but for c+1 instead of c}
+\end{align*} 
+
+%\vspace{-15mm}
+$$\text{\mybox{Q.E.D.}}$$
+
+\hrulefill
+
+$$\text{End of 5.4, 5.5 begins on the next page.}$$
+% ***********      ***********
+% ***              ***
+% *********        *********
+%         ****             ****
+% *       ****     *       ****
+% *********    **  *********
+\newpage
+\subsection{4, 12, 28, 42}
+
+4) Given $k(d_{k-1})^2$ is true $\forall k\geq 1 \in \mathbb{Z}$ and $d_0 = 3$. Find the first four terms.
+\begin{align*}
+d_0 &= 3\\
+d_1 &= 1(d_0)^2 = 1(9) = 9\\
+d_2 &= 2(d_1)^2 = 2(81) = 162\\
+d_3 &= 3(d_2)^2 = 3(26244) = 78732
+\end{align*} 
+
+\hrulefill
+
+\vspace{3mm}
+
+12) Given the sequence $s_0, s_1, s_2...$ and let that be defined by $\displaystyle{s_n=\frac{(-1)^n}{n!}}$ $\forall n\geq 0 \in \mathbb{Z}$ 
+
+Show that it satisfies $s_k = \displaystyle{\frac{-s_{k-1}}{k}}$.
+
+\vspace{3mm}
+
+\underline{Base Case:} $P(1) = 1 = \displaystyle{\frac{-s_0}{1}} =$ true. Base case holds true for the claim $\forall k \geq 1 \in \mathbb{Z}$.
+
+\vspace{3mm}
+
+\underline{Inductive Step:} 
+
+Let $P(c)$ state that $\displaystyle{s_c = \frac{-s_{c-1}}{c}}$ and suppose this is true $\forall c\geq 1 \in \mathbb{Z}$. We also need to consider that $s_c = \displaystyle{\frac{(-1)^c}{c!}}$ within the same bounds. If we check for $s_{c+1}$ in the given equation, we get $\displaystyle{\frac{(-1)^{c+1}}{(c+1)!}}$
+
+We need to show that $P(k+1)$ is true
+
+\begin{align*}
+s_{c+1} &= \displaystyle{\frac{-s_c}{c+1}} \\
+s_{c+1} &= \displaystyle{\frac{-1\cdot \displaystyle{\frac{(-1)^c}{c!}}}{c+1}}\\
+s_{c+1} &= \displaystyle{\frac{(-1)^{c+1}}{c!\cdot (c+1)}} \\
+s_{c+1} &= \displaystyle{\frac{(-1)^{c+1}}{(c+1)!}}
+\end{align*}
+
+$$\text{\mybox{This is what we wanted, Q.E.D.}}$$
+
+
+
+\hrulefill
+
+28) The question we are dealing with is a Fibonacci series so we can safely suppose that $F_{k+1} = F_k + F_{k-1}$ 
+
+Prove the first statement $\forall k\geq 1 \in \mathbb{Z}$
+\begin{align*}
+(F_{k+1})^2 - (F_k)^2 - (F_{k-1})^2 &= 2F_kF_{k-1} \\
+n = 1; F_2^2 - F_1^2 - F_0^2 &= 2(F_1)(F_0)\\
+2^2-1^2-1^2 &= 2(1)(1)\\
+2 &= 2 \\
+\intertext{This is true for the Base case, n=1}
+(F_{k+1})^2 - (F_k)^2 - (F_{k-1})^2 &= 2F_kF_{k-1} \\
+(F_k + F_{k-1})^2 - (F_k)^2 - (F_{k-1})^2 &= 2F_kF_{k-1} \\
+(F_k)^2 +2F_kF_{k-1} + (F_{k-1})^2 - (F_k)^2 - (F_{k-1})^2 &= 2F_kF_{k-1} \\
+2F_kF_{k-1} &= 2F_kF_{k-1} \text{ - \mybox{This is what we wanted}}
+\end{align*}
+
+
+\hrulefill
+\vspace{3mm}
+
+42) Prove inductively $\displaystyle{\prod\limits_{i=1}^n(ca_i) = c^n\prod\limits_{i=1}^n(a_i)}$
+
+\vspace{3mm}
+
+\underline{Base Case:} $i=1$, $ca_1=c(a_1)$, works for the base case.
+
+\vspace{3mm}
+
+\underline{Inductive Step:} $\underbrace{(ca_1)\cdot (ca_2)\cdot (ca_3) \cdot \cdot \cdot (ca_n) = c^n(a_1 \cdot a_2 \cdot a_3 \cdot \cdot \cdot a_n)}\limits_{\text{Inductive Hypothesis}}$
+
+Show true for $n+1$, $\displaystyle{c^{n+1}\prod\limits_{i=1}^{n+1}a_i}$
+\begin{align*}
+(ca_1)\cdot (ca_2)\cdot (ca_3) \cdot \cdot \cdot (ca_n) \cdot (ca_{n+1}) &= c^{n+1}(a_1 \cdot a_2 \cdot a_3 \cdot \cdot \cdot a_n\cdot a_{n+1})\\
+c^n(a_1 \cdot a_2 \cdot a_3 \cdot \cdot \cdot a_n) \cdot (ca_{n+1}) &= c^{n+1}(a_1 \cdot a_2 \cdot a_3 \cdot \cdot \cdot a_n\cdot a_{n+1})\\
+c^{n}\cdot c \cdot(a_1 \cdot a_2 \cdot a_3 \cdot \cdot \cdot a_n\cdot a_{n+1})&= c^{n+1}(a_1 \cdot a_2 \cdot a_3 \cdot \cdot \cdot a_n\cdot a_{n+1})\\
+\displaystyle{c^{n+1}\prod\limits_{i=1}^{n+1}a_i} &= \displaystyle{c^{n+1}\prod\limits_{i=1}^{n+1}a_i}
+\end{align*}
+
+$$\text{\mybox{This is what we wanted}}$$
+
+
+
+
+
+
+\hrulefill
+
+% ***********      **********
+% ***              ***     **
+% *********        *******
+%         ****     **    ****
+% *       ****     **     ****
+% *********    **  **********
+%\newpage
+\subsection{8, 13, 38}
+
+\vspace{3mm}
+
+8) $f_k = f_{k-1}+2^k$ and $f_1 = 1$
+
+\begin{align*}
+f_1 &= 1\\
+f_2 &= 1 + 2^2 = 5\\
+f_3 &= 5+2^3 = 13\\
+f_4 &= 13+2^4 = 29\\
+f_5 &= 29+2^5 = 61\\
+\intertext{Claim: $f_k = 2^{k+1}-3$}
+\intertext{ \underline{Base Case:} $k=1$ so $f_1 = 1 = 2^2 -1 $, this works so its valid for the base case.} 
+\intertext{\underline{Inductive Step:} Suppose $f_k = 2^{k+1} - 3$, we want to show $f_{k+1}=2^{k+2}-3$}
+f_k &= 2^{k+1}-3 \\
+f_{k+1} &= f_k + 2^{k+1} \\
+f_{k+1} &= 2^{k+1}-3 + 2^{k+1} \\
+f_{k+1} &= 2\cdot 2^{k+1} -3 \\
+f_{k+1} &= 2^{k+2} -3 \\ 
+\end{align*}
+\vspace{-13mm}
+$$\text{\mybox{This is what we wanted, Q.E.D}}$$
+
+\hrulefill
+\newpage
+13 and 38) $t_k = t_{k-1}+3k+1$ and $t_0 = 0$
+
+\begin{align*}
+t_0 &= 0\\
+t_1 &= 0 + 3(1) + 1 = 4\\
+t_2 &= 4 + 3(2) + 1 = 11\\
+t_3 &= 11 + 3(3) + 1 = 21\\
+t_4 &= 21 + 3(4) + 1 = 34\\
+t_5 &= 34 + 3(5) + 1 = 50\\
+\intertext{Claim: $t_k = \displaystyle{3\cdot \left(\frac{k\cdot (k+1)}{2}\right)}+k$}
+\intertext{ \underline{Base Case:} $k=1$ so $t_1 =\displaystyle{3\cdot \left(\frac{1\cdot (1+1)}{2}\right)}+1 = 4$, this works so its valid for the base case.} 
+\intertext{\underline{\textbf{38)} Inductive Step:} Suppose $t_k = \displaystyle{3\cdot \left(\frac{k\cdot (k+1)}{2}\right)}+k$, we want to show $t_k = \displaystyle{3\cdot \left(\frac{(k+1)\cdot (k+2)}{2}\right)}+(k+1)$}
+\intertext{Going back to the sequence that we were given}
+t_{k+1} &= t_k +3k + 3 +1 \\
+t_{k+1} &= 3\left( \displaystyle{\frac{k(k+1)}{2}} \right) + k + 3k + 3 + 1\\
+t_{k+1} &= \displaystyle{\frac{3k^2+11k+8}{2}}
+\intertext{Going back to the Inductive Hypothesis and the Inductive Step}
+t_k &= \displaystyle{3\cdot \left(\frac{(k+1)\cdot (k+2)}{2}\right)}+(k+1) \\
+t_{k+1} &= \displaystyle{ \frac{3\cdot(k^2+3k+2)}{2}}+\frac{2\cdot (k+1)}{2} \\
+t_{k+1} &= \displaystyle{\frac{3k^2+11k+8}{2}}
+\end{align*}
+\vspace{-4mm}
+$$\text{This is what we wanted \mybox{Q.E.D.}}$$
+
+\hrulefill
+
+\end{flushleft}
+\end{document}

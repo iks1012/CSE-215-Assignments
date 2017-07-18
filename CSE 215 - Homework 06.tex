@@ -1,0 +1,266 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\voffset}{0in}
+\setlength{\headsep}{20pt}
+\setcounter{section}{+6}
+\usepackage{wrapfig,lipsum,booktabs}
+\usepackage{ulem}
+
+\newcommand\tab[1][.8 cm]{\hspace*{#1}}
+\newcommand*{\mybox}[1]{\framebox{#1}}
+
+
+%${\rm I\!R}^3$
+
+\begin{document}
+\title{\vspace{-.5in} Ishan Sethi $|$ ID: 110941217 $|$ CSE 215 $|$ Homework 6 in \LaTeX}
+\author{Professor McDonnell $|$ Assigned: April 13, 2017 $|$ Due: April 25, 2017}
+\date{}
+\maketitle
+\hrulefill
+\tableofcontents
+
+\section{Functions}
+\subsection{3b, 3d, 10d, 10e, 10f, 12c, 12d, 41}
+\begin{flushleft}
+
+3b) $$g(1) = b\text{, }g(3) = b\text{ and }g(5) =b$$
+
+\vspace{5mm}
+
+3d) $3$ is not the inverse image of $a$, $1$ is the inverse image of $b$.
+
+
+\hrulefill
+
+10d) $$T(5) = 5\text{ and }1$$
+
+10e) $$T(18) = 1,\  2,\  3,\  6,\  9\text{ and }18$$
+
+10f) $$T(21) = 1,\  3,\  7\text{ and }21$$
+
+
+\hrulefill
+
+12c) $G(3,\ 2)=((2\cdot(3)+1)mod\ 5,\ (3\cdot  (2)-2)mod\ 5) = \text{\mybox{$ (2,4)$}}$
+
+12d) $G(1,\ 5)=((2\cdot(1)+1)mod\ 5,\ (3\cdot  (5)-2)mod\ 5) = \text{\mybox{$ (3,3)$}}$
+
+\hrulefill
+
+41) $\forall$ subsets of $C$ and $D$ of $Y$, Justify that $F^{-1}(C-D) = F^{-1}(C) - F^{-1}(D)$
+
+\begin{align*}
+x\in F^{-1}(C-D)\Rightarrow F(x)\in (C-D) &- \text{Due to the inverse image law} \\
+F(x)\in (C-D)\Rightarrow F(x)\in C\text{ and }F(x)\notin D &- \text{Set Difference Law} \\
+\intertext{Now proceed to the right side}
+x\in F^{-1}(C) - F^{-1}(D) \Rightarrow x\in F^{-1}(C)\text{ and }x\notin F^{-1}(D)  &- \text{Set Difference Law}\\
+x\in F^{-1}(C)\text{ and }x\notin F^{-1}(D) \Rightarrow F(x)\in C \text{ and }F(x)\notin D &- \text{Inverse Image Law}\\
+\intertext{Since fundamental element argument is the same for both sides, they are both subsets of each other - Definition of Subsets.}
+F^{-1}(C-D)\subseteq F^{-1}(C) - F^{-1}(D) &- \text{Definition of Subsets}\\
+x\in F^{-1}(C) - F^{-1}(D) \Rightarrow x\in F^{-1}(C)\text{ and }x\notin F^{-1}(D)  &- \text{Set Difference Law}\\
+x\in F^{-1}(C)\text{ and }x\notin F^{-1}(D) \Rightarrow F(x)\in C \text{ and }F(x)\notin D &- \text{Inverse Image Law}\\
+\intertext{Now proceed to the right side}
+x\in F^{-1}(C-D)\Rightarrow F(x)\in (C-D) &- \text{Due to the inverse image law} \\
+F(x)\in (C-D)\Rightarrow F(x)\in C\text{ and }F(x)\notin D &- \text{Set Difference Law} \\
+\intertext{Since fundamental element argument is the same for both sides, they are both subsets of each other - Definition of Subsets.}
+F^{-1}(C) - F^{-1}(D)\subseteq F^{-1}(C-D) &- \text{Definition of Subsets}\\
+\intertext{Since they are subsets of each other they are equal $\Rightarrow F^{-1}(C-D)= F^{-1}(C) - F^{-1}(D)$}
+\end{align*}
+
+\vspace{-14mm}
+
+\hrulefill 
+
+\end{flushleft}
+\subsection{7b, 9c, 9d, 12, 18, 23}
+\begin{flushleft}
+
+7b) Since no points map to $g$ in the set of $Y$, the definition of onto is violated and it is \mybox{not onto}.
+
+\hrulefill
+
+9c) If you took all the points from the set $X$ and mapped it to one point out of more than one in the set $Y$, you have a function that is not onto and not one-to-one.
+
+9d) If the set of $X$ are the values $\{ 1,2,3\}$ and the set $Y$ are the values $\{ 1,2,3\}$ and $F: X \to Y$ would result in the mappings $1$ to $2$, $2$ to $3$ and $3$ to $1$, this would be one-to-one, onto and not the identity function.
+
+\hrulefill
+
+12a) $F:\mathbb{Z}\to \mathbb{Z}$ by the rule $F(n) = 2 - 3n$ $\forall n \in \mathbb{Z}$ 
+
+(i) Definition of one-to-one: $\forall x_1$ and $\forall x_2$, if $F(x_1)=F(x_2)$ then $x_1=x_2$
+
+\begin{align*}
+F(x_1) &= 2-3(x_1)\\
+F(x_2) &= 2-3(x_2)\\
+2-3(x_1) &= 2-3(x_2)\\
+x_1 &= x_2 
+\intertext{This means that the function is one to one.}
+\end{align*}
+
+(ii) Definition of onto: $\forall y\in Y$ and $\forall n\in X$, $F(x)=y$.
+
+\begin{align*}
+\intertext{Suppose $y\in \mathbb{Z}$}
+y &= 2-3(n)\\
+n &= \displaystyle\frac{y-2}{3}\\
+\text{When }y &= 0\text{, because it can be any integer. }\\
+n &= \displaystyle\frac{2}{3} \text{ not an integer.}\\
+\intertext{This means that the function is not onto.}
+\end{align*}
+
+
+More on the next page.
+
+\hrulefill
+
+\newpage
+12b) $G:\mathbb{R} \to \mathbb{R}$ by the rule $G(x) = 2 - 3x$
+
+Definition of onto: $\forall y \in Y$ and $\forall x \in X$ such that if $F(x)=y$ then the function is onto.
+
+\begin{align*}
+\intertext{Suppose $y\in \mathbb{R}$}
+y &= 2-3(x)\\
+x &= \displaystyle\frac{y-2}{3}\\
+F(x) &= 2-3\left(\displaystyle\frac{y-2}{-3}\right) \\
+F(x) &= y\\
+\intertext{This means that the function is onto as per the definition.}
+\end{align*}
+
+\hrulefill
+
+18) $f(x) = \displaystyle\frac{x+1}{x-1}$ $\forall x \in \mathbb{R}$ and $x \neq 1$
+
+Prove if this is one-to-one
+
+Definition of one-to-one: $\forall x_1$ and $\forall x_2$ and $x_1 \neq 1$ and $x_2 \neq 2$, if $F(x_1)=F(x_2)$ then $x_1=x_2$
+
+\begin{align*}
+F(x_1) &= \displaystyle\frac{x_1+1}{x_1-1}\\
+F(x_2) &= \displaystyle\frac{x_2+1}{x_2-1}\\
+\displaystyle\frac{x_2+1}{x_2-1} &= \displaystyle\frac{x_1+1}{x_1-1}\\
+x_1x_2 - x_1 +x_2-1 &= x_1x_2 + x_1 - x_2 - 1\\
+2x_1 &= 2x_2 \\
+x_1 &= x_2 \\   
+\intertext{This means that the function is one to one.}
+\end{align*}
+
+\hrulefill
+
+23) $H:\mathbb{R}\times \mathbb{R} \to \mathbb{R}\times \mathbb{R}$ by the rule $H(x,y) = (x+1,2-y)$, $\forall (x,y) \in \mathbb{R} \times \mathbb{R}$
+
+\begin{align*}
+H(x_1,y_1) &= (x_1+1,2-y_1)\\
+H(x_2,y_2) &= (x_2+1,2-y_2)\\
+x_1 + 1 &= x_2 + 1 \\
+2-y_1 &= 2 - y_2 \\ 
+x_1 &= x_2 \\
+y_1 &= y_2 \\
+\intertext{Thus $(x_1,y_1)=(x_2,y_2)$This is means that it is one-to-one}
+\end{align*}
+
+
+
+
+
+\hrulefill
+
+\newpage
+
+\end{flushleft}
+\subsection{7, 10, 17, 20, 24, 25}
+\begin{flushleft}
+
+7) $H:\mathbb{Z}\to \mathbb{Z}$ and $K:\mathbb{Z}\to \mathbb{Z}$, $H(a)=6a$ and $K(a)=a\ mod\ 4$ $\forall a \in \mathbb{Z}$
+
+$(K\circ H)(0) = K(H(0)) = K(6(0)) = K(0) = 0$
+
+$(K\circ H)(1) = K(H(1)) = K(6(1)) = K(6) = 2$
+
+$(K\circ H)(2) = K(H(2)) = K(6(2)) = K(12) = 0$
+
+$(K\circ H)(3) = K(H(3)) = K(6(3)) = K(18) = 2$
+
+\hrulefill
+
+10) $G: \mathbb{R}^+ \to \mathbb{R}^+$ and $G^{-1}: \mathbb{R}^+ \to \mathbb{R}^+$, $G(x) = x^2$ and $G^{-1}(x) = \sqrt{x}$ 
+
+$(G\circ G^{-1})(x) = (\sqrt{x})^2 = x = I_x$ 
+
+$(G^{-1}\circ G)(x) = (\sqrt{x^2}) = x = I_x$
+
+We Gucci 
+
+\hrulefill
+
+17) 
+\vspace{20mm}
+
+\hrulefill
+
+20) $f:W\to X$ and $g:X\to Y$ and $h:Y\to Z$ must $h\circ (g\circ f) = (h\circ g)\circ f$
+
+Given a $W\in h\circ (g\circ f)$ this essentially means $W\in h(g(f(w)))$
+
+Given a $W\in (h\circ g)\circ f$ this essentially means $W\in h(g(f(w)))$
+
+These are the same making them subsets of each other therefore being equal by the definition of subsets.
+
+\hrulefill
+
+24) $f: \mathbb{R}\to \mathbb{R}$ and $g: \mathbb{R}\to \mathbb{R}$ 
+
+$f(x)=x+3$ $g(x)=-x$
+
+$(g\circ f)=-x-3$
+
+$(g\circ f)^{-1} = -x-3$
+
+$g^{-1} = -x$
+
+$f^{-1} = x-3$
+
+$ (f^{-1} \circ g^{-1}) = -x-3$
+
+They are the same.
+
+\hrulefill
+
+25) $f(x)$ is one-to-one 
+
+\begin{align*}
+\intertext{$f(x)$ is one-to-one}
+f(x) &= f(y) \\
+g(f(x)) &= f(g(y))\text{ Definition of composition}\\
+x&=y \text{ by the given condition of $(g\circ f)=I_x$}\\
+\intertext{$g(x)$ is one-to-one}
+g(x) &= g(y) \\
+g(f(x)) &= f(g(y)) \text{ Definition of composition}\\
+x&=y \text{ by the given condition of $(g\circ f)=I_y$}\\
+\intertext{$f(x)$ is onto}
+\text{Suppose } x \in Y \text{ because }(f\circ g) &= I_y = y\\
+(f\circ g)(x) &= y\\
+f(g(x)) &= y \text{ and }x\in X
+\intertext{While $x\in Y$ such that f(g(x)) results in x and $x\in X\ \therefore$ it is ONTO}
+\intertext{$g(x)$ is onto}
+\text{Suppose }x\in X \text{ because }(g\circ f)(x) &= x\\
+(g\circ f)(x) &= x\\
+g(f(x)) &= x \text{ and }x\in Y\\
+\intertext{While $x\in X$ $g(f(x))$ gives x and $x \in Y \therefore g(x)$ is ONTO} 
+\end{align*}
+
+Because $f(g(y)) = y$, both $g^{-1} = f$ and $f^{-1} = g$... the co-domain of one equals the domain of the other.
+
+ 
+
+
+
+
+
+\hrulefill
+
+\end{flushleft}
+\end{document}
